@@ -1,0 +1,578 @@
+2025-10-10 16:11:44,833 - INFO - Carregando modelo detector 'openai-community/roberta-base-openai-detector' no CPU absoluto.
+2025-10-10 16:11:44,835 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-10 16:11:45,076 - DEBUG - https://huggingface.co:443 "HEAD /openai-community/roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-10 16:11:45,107 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai-community/roberta-base-openai-detector/6cba99c003b711c7fe94f8a3aa2be35a792cb6fa/config.json HTTP/1.1" 200 0
+2025-10-10 16:11:45,333 - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:11:45,407 - INFO - Carregando modelo avaliador 'openai-community/roberta-base-openai-detector' no CPU.
+2025-10-10 16:11:45,559 - DEBUG - https://huggingface.co:443 "HEAD /openai-community/roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-10 16:11:45,592 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai-community/roberta-base-openai-detector/6cba99c003b711c7fe94f8a3aa2be35a792cb6fa/config.json HTTP/1.1" 200 0
+2025-10-10 16:11:45,798 - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:11:45,979 - WARNING - GUI: Logo não encontrada em /home/andrefarias/Desenvolvimento/Detector-de-Doppelganger/assets/logo.png. Usando fallback.
+2025-10-10 16:11:46,050 - INFO - GUI: Selecionado modelo 't5-small'. Iniciando carregamento lento.
+2025-10-10 16:11:46,051 - INFO - GUI Thread: Modelos ausentes: ['t5-small', 't5-small', 't5-small']. Iniciando download na primeira execução (pode ser lenta).
+2025-10-10 16:11:46,054 - INFO - GUI Thread: Iniciando carregamento do modelo 't5-small' em thread separada no CPU.
+2025-10-10 16:11:46,054 - INFO - Iniciando carregamento do modelo 't5-small' no CPU.
+2025-10-10 16:11:46,055 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-10 16:11:46,273 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-10 16:11:46,432 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-10-10 16:11:46,581 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:11:46,736 - INFO - Tokenizer para 't5-small' carregado com sucesso.
+2025-10-10 16:11:46,891 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-10-10 16:11:47,133 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-10-10 16:11:47,286 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-10-10 16:11:47,290 - INFO - Modelo 't5-small' carregado com sucesso no CPU em 1.24 segundos.
+2025-10-10 16:11:47,290 - INFO - GUI Thread: Modelo 't5-small' colocado na fila de carregamento.
+2025-10-10 16:11:47,296 - INFO - GUI: Modelo 't5-small' carregado com sucesso na GUI.
+2025-10-10 16:13:22,073 - INFO - GUI: Selecionado modelo 't5-small'. Iniciando carregamento lento.
+2025-10-10 16:13:22,074 - INFO - GUI Thread: Modelos ausentes: ['t5-small', 't5-small', 't5-small']. Iniciando download na primeira execução (pode ser lenta).
+2025-10-10 16:13:22,076 - INFO - GUI Thread: Iniciando carregamento do modelo 't5-small' em thread separada no CPU.
+2025-10-10 16:13:22,076 - INFO - Iniciando carregamento do modelo 't5-small' no CPU.
+2025-10-10 16:13:22,290 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-10 16:13:22,438 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-10-10 16:13:22,612 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:13:22,654 - INFO - Tokenizer para 't5-small' carregado com sucesso.
+2025-10-10 16:13:22,801 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-10-10 16:13:22,988 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-10-10 16:13:23,143 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-10-10 16:13:23,147 - INFO - Modelo 't5-small' carregado com sucesso no CPU em 1.07 segundos.
+2025-10-10 16:13:23,147 - INFO - GUI Thread: Modelo 't5-small' colocado na fila de carregamento.
+2025-10-10 16:13:23,181 - INFO - GUI: Modelo 't5-small' carregado com sucesso na GUI.
+2025-10-10 16:13:44,032 - INFO - GUI: Iniciando thread de análise e humanização em batches lentos.
+2025-10-10 16:13:44,033 - INFO - GUI: Thread de análise em batches iniciada.
+2025-10-10 16:13:44,033 - INFO - GUI: Nenhum checkpoint encontrado. Iniciando novo processamento.
+2025-10-10 16:13:44,033 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:13:44,625 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:13:44,625 - INFO - GUI: Detecção de IA do texto original: 0.02%.
+2025-10-10 16:13:44,625 - INFO - GUI: A humanização será executada incondicionalmente em batches lentos.
+2025-10-10 16:13:44,626 - INFO - GUI: Iniciando processamento por frases em batches minúsculos. Total de frases: 19.
+2025-10-10 16:13:44,626 - INFO - GUI: Processando frase 1/19 em batch minúsculo.
+2025-10-10 16:13:44,626 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:44,798 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:44,902 - INFO - GUI: Processando frase 2/19 em batch minúsculo.
+2025-10-10 16:13:44,902 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:44,986 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:45,089 - INFO - GUI: Processando frase 3/19 em batch minúsculo.
+2025-10-10 16:13:45,089 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:45,552 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:45,654 - INFO - GUI: Processando frase 4/19 em batch minúsculo.
+2025-10-10 16:13:45,654 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:45,904 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:46,006 - INFO - GUI: Processando frase 5/19 em batch minúsculo.
+2025-10-10 16:13:46,006 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:46,243 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:46,345 - INFO - GUI: Processando frase 6/19 em batch minúsculo.
+2025-10-10 16:13:46,345 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:46,416 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:46,555 - INFO - GUI: Processando frase 7/19 em batch minúsculo.
+2025-10-10 16:13:46,555 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:47,167 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:47,270 - INFO - GUI: Processando frase 8/19 em batch minúsculo.
+2025-10-10 16:13:47,270 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:47,628 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:47,731 - INFO - GUI: Processando frase 9/19 em batch minúsculo.
+2025-10-10 16:13:47,731 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:48,187 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:48,290 - INFO - GUI: Processando frase 10/19 em batch minúsculo.
+2025-10-10 16:13:48,290 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:48,698 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:48,802 - INFO - GUI: Processando frase 11/19 em batch minúsculo.
+2025-10-10 16:13:48,802 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:48,887 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:48,990 - INFO - GUI: Processando frase 12/19 em batch minúsculo.
+2025-10-10 16:13:48,990 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:49,448 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:49,552 - INFO - GUI: Processando frase 13/19 em batch minúsculo.
+2025-10-10 16:13:49,552 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:49,805 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:49,909 - INFO - GUI: Processando frase 14/19 em batch minúsculo.
+2025-10-10 16:13:49,909 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:50,150 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:50,253 - INFO - GUI: Processando frase 15/19 em batch minúsculo.
+2025-10-10 16:13:50,253 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:50,327 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:50,430 - INFO - GUI: Processando frase 16/19 em batch minúsculo.
+2025-10-10 16:13:50,430 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:51,952 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:52,055 - INFO - GUI: Processando frase 17/19 em batch minúsculo.
+2025-10-10 16:13:52,055 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:52,408 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:52,512 - INFO - GUI: Processando frase 18/19 em batch minúsculo.
+2025-10-10 16:13:52,512 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:52,749 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:52,852 - INFO - GUI: Processando frase 19/19 em batch minúsculo.
+2025-10-10 16:13:52,852 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:13:53,116 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:13:53,221 - INFO - GUI: Processamento por batches minúsculos concluído.
+2025-10-10 16:13:53,221 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:13:53,323 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:13:53,323 - INFO - GUI: Detecção de IA do texto humanizado: 0.02%.
+2025-10-10 16:13:53,323 - INFO - Iniciando avaliação de naturalidade em batch.
+2025-10-10 16:13:53,417 - INFO - Avaliação concluída. Score de naturalidade: 0.0002
+2025-10-10 16:13:53,418 - INFO - GUI: Processo de análise e humanização em batches concluído com sucesso.
+2025-10-10 16:15:33,354 - INFO - GUI: Selecionado modelo 't5-small'. Iniciando carregamento lento.
+2025-10-10 16:15:33,355 - INFO - GUI Thread: Modelos ausentes: ['t5-small', 't5-small', 't5-small']. Iniciando download na primeira execução (pode ser lenta).
+2025-10-10 16:15:33,356 - INFO - GUI Thread: Iniciando carregamento do modelo 't5-small' em thread separada no CPU.
+2025-10-10 16:15:33,356 - INFO - Iniciando carregamento do modelo 't5-small' no CPU.
+2025-10-10 16:15:33,357 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-10 16:15:33,607 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-10 16:15:33,762 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-10-10 16:15:33,932 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:15:33,989 - INFO - Tokenizer para 't5-small' carregado com sucesso.
+2025-10-10 16:15:34,147 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-10-10 16:15:34,340 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-10-10 16:15:34,503 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-10-10 16:15:34,507 - INFO - Modelo 't5-small' carregado com sucesso no CPU em 1.15 segundos.
+2025-10-10 16:15:34,507 - INFO - GUI Thread: Modelo 't5-small' colocado na fila de carregamento.
+2025-10-10 16:15:34,589 - INFO - GUI: Modelo 't5-small' carregado com sucesso na GUI.
+2025-10-10 16:15:43,160 - INFO - GUI: Iniciando thread de análise e humanização em batches lentos.
+2025-10-10 16:15:43,160 - INFO - GUI: Thread de análise em batches iniciada.
+2025-10-10 16:15:43,161 - INFO - GUI: Nenhum checkpoint encontrado. Iniciando novo processamento.
+2025-10-10 16:15:43,161 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:15:43,243 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:15:43,243 - INFO - GUI: Detecção de IA do texto original: 0.02%.
+2025-10-10 16:15:43,243 - INFO - GUI: A humanização será executada incondicionalmente em batches lentos.
+2025-10-10 16:15:43,244 - INFO - GUI: Iniciando processamento por frases em batches minúsculos. Total de frases: 19.
+2025-10-10 16:15:43,244 - INFO - GUI: Processando frase 1/19 em batch minúsculo.
+2025-10-10 16:15:43,244 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:43,406 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:43,509 - INFO - GUI: Processando frase 2/19 em batch minúsculo.
+2025-10-10 16:15:43,509 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:43,592 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:43,695 - INFO - GUI: Processando frase 3/19 em batch minúsculo.
+2025-10-10 16:15:43,695 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:44,155 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:44,257 - INFO - GUI: Processando frase 4/19 em batch minúsculo.
+2025-10-10 16:15:44,257 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:44,510 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:44,612 - INFO - GUI: Processando frase 5/19 em batch minúsculo.
+2025-10-10 16:15:44,612 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:44,854 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:44,957 - INFO - GUI: Processando frase 6/19 em batch minúsculo.
+2025-10-10 16:15:44,957 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:45,030 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:45,133 - INFO - GUI: Processando frase 7/19 em batch minúsculo.
+2025-10-10 16:15:45,133 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:46,657 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:46,760 - INFO - GUI: Processando frase 8/19 em batch minúsculo.
+2025-10-10 16:15:46,760 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:47,123 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:47,226 - INFO - GUI: Processando frase 9/19 em batch minúsculo.
+2025-10-10 16:15:47,226 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:47,470 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:47,574 - INFO - GUI: Processando frase 10/19 em batch minúsculo.
+2025-10-10 16:15:47,575 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:47,981 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:48,084 - INFO - GUI: Processando frase 11/19 em batch minúsculo.
+2025-10-10 16:15:48,085 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:48,168 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:48,271 - INFO - GUI: Processando frase 12/19 em batch minúsculo.
+2025-10-10 16:15:48,271 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:48,731 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:48,834 - INFO - GUI: Processando frase 13/19 em batch minúsculo.
+2025-10-10 16:15:48,834 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:49,086 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:49,188 - INFO - GUI: Processando frase 14/19 em batch minúsculo.
+2025-10-10 16:15:49,189 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:49,430 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:49,533 - INFO - GUI: Processando frase 15/19 em batch minúsculo.
+2025-10-10 16:15:49,534 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:49,607 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:49,710 - INFO - GUI: Processando frase 16/19 em batch minúsculo.
+2025-10-10 16:15:49,710 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:51,229 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:51,333 - INFO - GUI: Processando frase 17/19 em batch minúsculo.
+2025-10-10 16:15:51,333 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:51,690 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:51,793 - INFO - GUI: Processando frase 18/19 em batch minúsculo.
+2025-10-10 16:15:51,793 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:52,036 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:52,139 - INFO - GUI: Processando frase 19/19 em batch minúsculo.
+2025-10-10 16:15:52,139 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:15:52,403 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:15:52,506 - INFO - GUI: Processamento por batches minúsculos concluído.
+2025-10-10 16:15:52,506 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:15:52,601 - INFO - Detecção concluída. Probabilidade de IA: 0.0226
+2025-10-10 16:15:52,601 - INFO - GUI: Detecção de IA do texto humanizado: 2.26%.
+2025-10-10 16:15:52,601 - INFO - Iniciando avaliação de naturalidade em batch.
+2025-10-10 16:15:52,693 - INFO - Avaliação concluída. Score de naturalidade: 0.0226
+2025-10-10 16:15:52,693 - INFO - GUI: Processo de análise e humanização em batches concluído com sucesso.
+2025-10-10 16:17:10,818 - INFO - GUI: Iniciando thread de análise e humanização em batches lentos.
+2025-10-10 16:17:10,818 - INFO - GUI: Thread de análise em batches iniciada.
+2025-10-10 16:17:10,819 - INFO - GUI: Nenhum checkpoint encontrado. Iniciando novo processamento.
+2025-10-10 16:17:10,819 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:17:10,912 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:17:10,912 - INFO - GUI: Detecção de IA do texto original: 0.02%.
+2025-10-10 16:17:10,912 - INFO - GUI: A humanização será executada incondicionalmente em batches lentos.
+2025-10-10 16:17:10,912 - INFO - GUI: Iniciando processamento por frases em batches minúsculos. Total de frases: 16.
+2025-10-10 16:17:10,912 - INFO - GUI: Processando frase 1/16 em batch minúsculo.
+2025-10-10 16:17:10,912 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:11,474 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:11,575 - INFO - GUI: Processando frase 2/16 em batch minúsculo.
+2025-10-10 16:17:11,576 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:11,966 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:12,069 - INFO - GUI: Processando frase 3/16 em batch minúsculo.
+2025-10-10 16:17:12,069 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:12,516 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:12,619 - INFO - GUI: Processando frase 4/16 em batch minúsculo.
+2025-10-10 16:17:12,619 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:12,937 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:13,040 - INFO - GUI: Processando frase 5/16 em batch minúsculo.
+2025-10-10 16:17:13,040 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:13,670 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:13,773 - INFO - GUI: Processando frase 6/16 em batch minúsculo.
+2025-10-10 16:17:13,774 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:14,281 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:14,383 - INFO - GUI: Processando frase 7/16 em batch minúsculo.
+2025-10-10 16:17:14,383 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:14,833 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:14,937 - INFO - GUI: Processando frase 8/16 em batch minúsculo.
+2025-10-10 16:17:14,937 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:15,668 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:15,770 - INFO - GUI: Processando frase 9/16 em batch minúsculo.
+2025-10-10 16:17:15,771 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:16,344 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:16,446 - INFO - GUI: Processando frase 10/16 em batch minúsculo.
+2025-10-10 16:17:16,447 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:16,831 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:16,934 - INFO - GUI: Processando frase 11/16 em batch minúsculo.
+2025-10-10 16:17:16,934 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:17,385 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:17,488 - INFO - GUI: Processando frase 12/16 em batch minúsculo.
+2025-10-10 16:17:17,488 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:17,814 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:17,917 - INFO - GUI: Processando frase 13/16 em batch minúsculo.
+2025-10-10 16:17:17,917 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:18,612 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:18,716 - INFO - GUI: Processando frase 14/16 em batch minúsculo.
+2025-10-10 16:17:18,716 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:19,225 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:19,329 - INFO - GUI: Processando frase 15/16 em batch minúsculo.
+2025-10-10 16:17:19,329 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:19,779 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:19,883 - INFO - GUI: Processando frase 16/16 em batch minúsculo.
+2025-10-10 16:17:19,884 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:17:20,618 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:17:20,724 - INFO - GUI: Processamento por batches minúsculos concluído.
+2025-10-10 16:17:20,724 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:17:20,819 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:17:20,819 - INFO - GUI: Detecção de IA do texto humanizado: 0.02%.
+2025-10-10 16:17:20,819 - INFO - Iniciando avaliação de naturalidade em batch.
+2025-10-10 16:17:20,907 - INFO - Avaliação concluída. Score de naturalidade: 0.0002
+2025-10-10 16:17:20,908 - INFO - GUI: Processo de análise e humanização em batches concluído com sucesso.
+2025-10-10 16:17:40,599 - INFO - GUI: Selecionado modelo 't5-small'. Iniciando carregamento lento.
+2025-10-10 16:17:40,599 - INFO - GUI Thread: Modelos ausentes: ['t5-small', 't5-small', 't5-small']. Iniciando download na primeira execução (pode ser lenta).
+2025-10-10 16:17:40,602 - INFO - GUI Thread: Iniciando carregamento do modelo 't5-small' em thread separada no CPU.
+2025-10-10 16:17:40,602 - INFO - Iniciando carregamento do modelo 't5-small' no CPU.
+2025-10-10 16:17:40,756 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-10 16:17:40,913 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-10-10 16:17:41,069 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-10-10 16:17:41,208 - INFO - Tokenizer para 't5-small' carregado com sucesso.
+2025-10-10 16:17:41,368 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-10-10 16:17:41,567 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-10-10 16:17:41,728 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-10-10 16:17:41,732 - INFO - Modelo 't5-small' carregado com sucesso no CPU em 1.13 segundos.
+2025-10-10 16:17:41,732 - INFO - GUI Thread: Modelo 't5-small' colocado na fila de carregamento.
+2025-10-10 16:17:41,772 - INFO - GUI: Modelo 't5-small' carregado com sucesso na GUI.
+2025-10-10 16:18:25,662 - INFO - GUI: Iniciando thread de análise e humanização em batches lentos.
+2025-10-10 16:18:25,663 - INFO - GUI: Thread de análise em batches iniciada.
+2025-10-10 16:18:25,663 - INFO - GUI: Nenhum checkpoint encontrado. Iniciando novo processamento.
+2025-10-10 16:18:25,663 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:18:25,748 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:18:25,748 - INFO - GUI: Detecção de IA do texto original: 0.02%.
+2025-10-10 16:18:25,748 - INFO - GUI: A humanização será executada incondicionalmente em batches lentos.
+2025-10-10 16:18:25,748 - INFO - GUI: Iniciando processamento por frases em batches minúsculos. Total de frases: 16.
+2025-10-10 16:18:25,748 - INFO - GUI: Processando frase 1/16 em batch minúsculo.
+2025-10-10 16:18:25,748 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:26,443 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:26,545 - INFO - GUI: Processando frase 2/16 em batch minúsculo.
+2025-10-10 16:18:26,546 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:27,025 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:27,128 - INFO - GUI: Processando frase 3/16 em batch minúsculo.
+2025-10-10 16:18:27,128 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:27,679 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:27,783 - INFO - GUI: Processando frase 4/16 em batch minúsculo.
+2025-10-10 16:18:27,783 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:28,170 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:28,274 - INFO - GUI: Processando frase 5/16 em batch minúsculo.
+2025-10-10 16:18:28,274 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:29,138 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:29,241 - INFO - GUI: Processando frase 6/16 em batch minúsculo.
+2025-10-10 16:18:29,242 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:29,856 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:29,959 - INFO - GUI: Processando frase 7/16 em batch minúsculo.
+2025-10-10 16:18:29,959 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:30,525 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:30,629 - INFO - GUI: Processando frase 8/16 em batch minúsculo.
+2025-10-10 16:18:30,629 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:31,531 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:31,634 - INFO - GUI: Processando frase 9/16 em batch minúsculo.
+2025-10-10 16:18:31,635 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:32,320 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:32,423 - INFO - GUI: Processando frase 10/16 em batch minúsculo.
+2025-10-10 16:18:32,424 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:32,898 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:33,002 - INFO - GUI: Processando frase 11/16 em batch minúsculo.
+2025-10-10 16:18:33,002 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:33,548 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:33,652 - INFO - GUI: Processando frase 12/16 em batch minúsculo.
+2025-10-10 16:18:33,652 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:34,045 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:34,148 - INFO - GUI: Processando frase 13/16 em batch minúsculo.
+2025-10-10 16:18:34,148 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:35,001 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:35,105 - INFO - GUI: Processando frase 14/16 em batch minúsculo.
+2025-10-10 16:18:35,105 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:36,311 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:36,414 - INFO - GUI: Processando frase 15/16 em batch minúsculo.
+2025-10-10 16:18:36,414 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:36,968 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:37,072 - INFO - GUI: Processando frase 16/16 em batch minúsculo.
+2025-10-10 16:18:37,072 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:37,984 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:38,089 - INFO - GUI: Processamento por batches minúsculos concluído.
+2025-10-10 16:18:38,089 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:18:38,184 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:18:38,184 - INFO - GUI: Detecção de IA do texto humanizado: 0.02%.
+2025-10-10 16:18:38,184 - INFO - Iniciando avaliação de naturalidade em batch.
+2025-10-10 16:18:38,275 - INFO - Avaliação concluída. Score de naturalidade: 0.0002
+2025-10-10 16:18:38,275 - INFO - GUI: Processo de análise e humanização em batches concluído com sucesso.
+2025-10-10 16:18:49,150 - INFO - GUI: Iniciando thread de análise e humanização em batches lentos.
+2025-10-10 16:18:49,151 - INFO - GUI: Thread de análise em batches iniciada.
+2025-10-10 16:18:49,151 - INFO - GUI: Nenhum checkpoint encontrado. Iniciando novo processamento.
+2025-10-10 16:18:49,152 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:18:49,251 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:18:49,251 - INFO - GUI: Detecção de IA do texto original: 0.02%.
+2025-10-10 16:18:49,251 - INFO - GUI: A humanização será executada incondicionalmente em batches lentos.
+2025-10-10 16:18:49,251 - INFO - GUI: Iniciando processamento por frases em batches minúsculos. Total de frases: 16.
+2025-10-10 16:18:49,251 - INFO - GUI: Processando frase 1/16 em batch minúsculo.
+2025-10-10 16:18:49,251 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:49,994 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:50,096 - INFO - GUI: Processando frase 2/16 em batch minúsculo.
+2025-10-10 16:18:50,096 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:50,573 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:50,676 - INFO - GUI: Processando frase 3/16 em batch minúsculo.
+2025-10-10 16:18:50,676 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:51,234 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:51,336 - INFO - GUI: Processando frase 4/16 em batch minúsculo.
+2025-10-10 16:18:51,337 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:51,746 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:51,849 - INFO - GUI: Processando frase 5/16 em batch minúsculo.
+2025-10-10 16:18:51,849 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:52,707 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:52,809 - INFO - GUI: Processando frase 6/16 em batch minúsculo.
+2025-10-10 16:18:52,809 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:53,436 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:53,539 - INFO - GUI: Processando frase 7/16 em batch minúsculo.
+2025-10-10 16:18:53,539 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:54,109 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:54,212 - INFO - GUI: Processando frase 8/16 em batch minúsculo.
+2025-10-10 16:18:54,212 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:55,116 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:55,219 - INFO - GUI: Processando frase 9/16 em batch minúsculo.
+2025-10-10 16:18:55,219 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:55,910 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:56,013 - INFO - GUI: Processando frase 10/16 em batch minúsculo.
+2025-10-10 16:18:56,013 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:56,962 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:57,065 - INFO - GUI: Processando frase 11/16 em batch minúsculo.
+2025-10-10 16:18:57,065 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:57,621 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:57,724 - INFO - GUI: Processando frase 12/16 em batch minúsculo.
+2025-10-10 16:18:57,724 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:58,164 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:58,267 - INFO - GUI: Processando frase 13/16 em batch minúsculo.
+2025-10-10 16:18:58,268 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:18:59,754 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:18:59,858 - INFO - GUI: Processando frase 14/16 em batch minúsculo.
+2025-10-10 16:18:59,859 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:19:00,480 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:19:00,584 - INFO - GUI: Processando frase 15/16 em batch minúsculo.
+2025-10-10 16:19:00,584 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:19:01,141 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:19:01,245 - INFO - GUI: Processando frase 16/16 em batch minúsculo.
+2025-10-10 16:19:01,245 - INFO - Iniciando humanização do texto em batch minúsculo.
+2025-10-10 16:19:02,149 - INFO - Humanização concluída com sucesso em batch.
+2025-10-10 16:19:02,254 - INFO - GUI: Processamento por batches minúsculos concluído.
+2025-10-10 16:19:02,254 - INFO - Iniciando detecção de IA em batch.
+2025-10-10 16:19:02,347 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-10 16:19:02,347 - INFO - GUI: Detecção de IA do texto humanizado: 0.02%.
+2025-10-10 16:19:02,347 - INFO - Iniciando avaliação de naturalidade em batch.
+2025-10-10 16:19:02,434 - INFO - Avaliação concluída. Score de naturalidade: 0.0002
+2025-10-10 16:19:02,435 - INFO - GUI: Processo de análise e humanização em batches concluído com sucesso.
+2025-10-10 16:42:52,729 - INFO - GUI: Salvamento de arquivo cancelada.
+2025-10-20 20:55:07,705 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 20:55:07,705 - INFO - Chave HF carregada do .env.
+2025-10-20 20:55:07,706 - INFO - Estilos carregados de prompts.json.
+2025-10-20 20:55:07,706 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 20:55:07,706 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 20:55:08,239 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 20:55:08,239 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 20:55:09,356 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 20:55:42,778 - INFO - Iniciando detecção de IA.
+2025-10-20 20:55:43,352 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:55:43,432 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:55:43,432 - INFO - Iniciando detecção de IA.
+2025-10-20 20:55:43,513 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:55:47,715 - INFO - Iniciando detecção de IA.
+2025-10-20 20:55:47,792 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:55:47,863 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:55:47,863 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.00, final: 0.00
+2025-10-20 20:56:06,514 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:06,615 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:06,697 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:56:06,697 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:06,780 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:10,668 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:10,738 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:10,807 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:56:10,807 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.00, final: 0.00
+2025-10-20 20:56:20,812 - INFO - Modelo humanizador 't5-small' já está carregado.
+2025-10-20 20:56:22,842 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:22,920 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:22,998 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:56:22,998 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:23,078 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:26,975 - INFO - Iniciando detecção de IA.
+2025-10-20 20:56:27,045 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 20:56:27,114 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 20:56:27,114 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.00, final: 0.00
+2025-10-20 20:56:42,246 - INFO - Modelo humanizador 't5-small' já está carregado.
+2025-10-20 21:04:13,005 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:04:13,008 - INFO - Chave HF carregada do .env.
+2025-10-20 21:04:13,009 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:04:13,009 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:04:13,009 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:04:13,564 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:04:13,564 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:04:14,692 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:04:47,276 - INFO - Iniciando detecção de IA.
+2025-10-20 21:04:47,384 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 21:04:47,468 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 21:04:47,468 - INFO - Iniciando detecção de IA.
+2025-10-20 21:04:47,553 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 21:04:52,530 - INFO - Iniciando detecção de IA.
+2025-10-20 21:04:52,612 - INFO - Detecção concluída. Probabilidade de IA: 0.0002
+2025-10-20 21:04:52,691 - INFO - Avaliação de naturalidade concluída. Score: 0.0002
+2025-10-20 21:04:52,691 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.00, final: 0.00
+2025-10-20 21:07:54,638 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:07:54,642 - INFO - Chave HF carregada do .env.
+2025-10-20 21:07:54,643 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:07:54,643 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:07:54,643 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:07:55,249 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:07:55,249 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:07:56,399 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:10:28,983 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:10:28,984 - INFO - Chave HF carregada do .env.
+2025-10-20 21:10:28,984 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:10:28,984 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:10:28,984 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:10:29,650 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:10:29,650 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:10:30,818 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:15:34,076 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:15:34,077 - INFO - Chave HF carregada do .env.
+2025-10-20 21:15:34,077 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:15:34,077 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:15:34,077 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:15:34,658 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:15:34,658 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:15:35,797 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:17:30,698 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:17:30,698 - INFO - Chave HF carregada do .env.
+2025-10-20 21:17:30,699 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:17:30,699 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:17:30,699 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:17:31,247 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:17:31,247 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:17:32,590 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:19:52,859 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-20 21:19:52,859 - INFO - Chave HF carregada do .env.
+2025-10-20 21:19:52,859 - INFO - Estilos carregados de prompts.json.
+2025-10-20 21:19:52,859 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-20 21:19:52,860 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-20 21:19:53,603 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-20 21:19:53,603 - INFO - Carregando modelo humanizador: t5-small
+2025-10-20 21:19:54,693 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-20 21:20:05,016 - INFO - Iniciando detecção de IA.
+2025-10-20 21:20:05,098 - INFO - Detecção concluída. Probabilidade de IA: 0.0006
+2025-10-20 21:20:05,157 - INFO - Avaliação de naturalidade concluída. Score: 0.0006
+2025-10-20 21:20:05,157 - INFO - Iniciando detecção de IA.
+2025-10-20 21:20:05,217 - INFO - Detecção concluída. Probabilidade de IA: 0.0006
+2025-10-20 21:20:07,657 - INFO - Iniciando detecção de IA.
+2025-10-20 21:20:07,715 - INFO - Detecção concluída. Probabilidade de IA: 0.0083
+2025-10-20 21:20:07,767 - INFO - Avaliação de naturalidade concluída. Score: 0.0083
+2025-10-20 21:20:07,767 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.00, final: 0.01
+2025-10-21 15:40:48,857 - WARNING - python-dotenv could not parse statement starting at line 1
+2025-10-21 15:40:48,857 - INFO - Chave HF carregada do .env.
+2025-10-21 15:40:48,857 - INFO - Estilos carregados de prompts.json.
+2025-10-21 15:40:48,857 - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-10-21 15:40:48,858 - INFO - Carregando modelo detector/avaliador: openai-community/roberta-base-openai-detector
+2025-10-21 15:40:49,427 - INFO - Modelo detector e avaliador carregados com sucesso.
+2025-10-21 15:40:49,427 - INFO - Carregando modelo humanizador: t5-small
+2025-10-21 15:40:50,579 - INFO - Modelo humanizador 't5-small' carregado com sucesso.
+2025-10-21 15:43:57,302 - INFO - Modelo humanizador 't5-small' já está carregado.
+2025-10-21 15:45:11,651 - INFO - Modelo humanizador 't5-small' já está carregado.
+2025-10-21 16:03:14,049 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:14,451 - INFO - Detecção concluída. Probabilidade de IA: 0.3311
+2025-10-21 16:03:14,482 - INFO - Avaliação de naturalidade concluída. Score: 0.3311
+2025-10-21 16:03:14,482 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:14,516 - INFO - Detecção concluída. Probabilidade de IA: 0.3311
+2025-10-21 16:03:15,288 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:15,328 - INFO - Detecção concluída. Probabilidade de IA: 0.1144
+2025-10-21 16:03:15,363 - INFO - Avaliação de naturalidade concluída. Score: 0.1144
+2025-10-21 16:03:15,363 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.33, final: 0.11
+2025-10-21 16:03:40,262 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:40,312 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:03:40,346 - INFO - Avaliação de naturalidade concluída. Score: 0.0075
+2025-10-21 16:03:40,346 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:40,380 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:03:41,195 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:41,233 - INFO - Detecção concluída. Probabilidade de IA: 0.1343
+2025-10-21 16:03:41,270 - INFO - Avaliação de naturalidade concluída. Score: 0.1343
+2025-10-21 16:03:41,270 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.13
+2025-10-21 16:03:42,405 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:42,442 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:03:42,475 - INFO - Avaliação de naturalidade concluída. Score: 0.0075
+2025-10-21 16:03:42,475 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:42,516 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:03:43,304 - INFO - Iniciando detecção de IA.
+2025-10-21 16:03:43,338 - INFO - Detecção concluída. Probabilidade de IA: 0.1343
+2025-10-21 16:03:43,376 - INFO - Avaliação de naturalidade concluída. Score: 0.1343
+2025-10-21 16:03:43,376 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.13
+2025-10-21 16:07:39,148 - INFO - Iniciando detecção de IA.
+2025-10-21 16:07:39,212 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:07:39,275 - INFO - Avaliação de naturalidade concluída. Score: 0.0075
+2025-10-21 16:07:39,275 - INFO - Iniciando detecção de IA.
+2025-10-21 16:07:39,342 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:07:40,377 - INFO - Iniciando detecção de IA.
+2025-10-21 16:07:40,418 - INFO - Detecção concluída. Probabilidade de IA: 0.0366
+2025-10-21 16:07:40,460 - INFO - Avaliação de naturalidade concluída. Score: 0.0366
+2025-10-21 16:07:40,460 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.04
+2025-10-21 16:17:51,125 - INFO - Iniciando detecção de IA.
+2025-10-21 16:17:51,160 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:17:51,189 - INFO - Avaliação de naturalidade concluída. Score: 0.0075
+2025-10-21 16:17:51,189 - INFO - Iniciando detecção de IA.
+2025-10-21 16:17:51,217 - INFO - Detecção concluída. Probabilidade de IA: 0.0075
+2025-10-21 16:17:52,355 - INFO - Iniciando detecção de IA.
+2025-10-21 16:17:52,387 - INFO - Detecção concluída. Probabilidade de IA: 0.0568
+2025-10-21 16:17:52,418 - INFO - Avaliação de naturalidade concluída. Score: 0.0568
+2025-10-21 16:17:52,418 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.06
+2025-10-21 16:18:07,689 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:07,746 - INFO - Detecção concluída. Probabilidade de IA: 0.0133
+2025-10-21 16:18:07,789 - INFO - Avaliação de naturalidade concluída. Score: 0.0133
+2025-10-21 16:18:07,789 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:07,834 - INFO - Detecção concluída. Probabilidade de IA: 0.0133
+2025-10-21 16:18:09,801 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:09,846 - INFO - Detecção concluída. Probabilidade de IA: 0.3968
+2025-10-21 16:18:09,890 - INFO - Avaliação de naturalidade concluída. Score: 0.3968
+2025-10-21 16:18:09,890 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.40
+2025-10-21 16:18:18,435 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:18,488 - INFO - Detecção concluída. Probabilidade de IA: 0.0133
+2025-10-21 16:18:18,532 - INFO - Avaliação de naturalidade concluída. Score: 0.0133
+2025-10-21 16:18:18,532 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:18,576 - INFO - Detecção concluída. Probabilidade de IA: 0.0133
+2025-10-21 16:18:20,531 - INFO - Iniciando detecção de IA.
+2025-10-21 16:18:20,576 - INFO - Detecção concluída. Probabilidade de IA: 0.3968
+2025-10-21 16:18:20,621 - INFO - Avaliação de naturalidade concluída. Score: 0.3968
+2025-10-21 16:18:20,621 - INFO - Reprocessamento concluído. Probabilidade IA inicial: 0.01, final: 0.40

@@ -1,0 +1,66 @@
+{
+  "default": {
+    "style": "conversacional",
+    "example": "Oi, tudo certo? Acabei de revisar o pipeline e acho que podemos otimizar a query principal. Quer dar uma olhada depois?",
+    "description": "Tom natural, como uma mensagem entre colegas. Ideal para e-mails casuais, chats ou notas internas em equipes técnicas.",
+    "tone": "amigável, direto, profissional",
+    "max_length": 400,
+    "creativity": 0.6
+  },
+  "conversacional": {
+    "style": "conversacional",
+    "example": "E aí, recebi os dados do último teste. Parece que o modelo está convergindo bem, mas precisamos ajustar o threshold. Bora discutir?",
+    "description": "Estilo fluido e natural, como uma conversa entre profissionais. Perfeito para comunicações internas ou brainstorming.",
+    "tone": "amigável, colaborativo, claro",
+    "max_length": 400,
+    "creativity": 0.6
+  },
+  "bullets": {
+    "style": "bullets",
+    "example": "- Dados processados: 10GB em 15 minutos.\n- Problema identificado: latência na query.\n- Próximo passo: otimizar índices.",
+    "description": "Formato em lista com marcadores, ideal para relatórios curtos, resumos de reuniões ou checklists técnicas.",
+    "tone": "organizado, objetivo, claro",
+    "max_length": 300,
+    "creativity": 0.3
+  },
+  "formal": {
+    "style": "formal",
+    "example": "Prezado colega, informo que o relatório foi finalizado e está disponível no repositório. Solicito sua revisão até sexta-feira. Atenciosamente, André.",
+    "description": "Tom profissional, mas não rígido. Ideal para e-mails formais, relatórios ou comunicações com stakeholders.",
+    "tone": "respeitoso, claro, profissional",
+    "max_length": 500,
+    "creativity": 0.4
+  },
+  "imitation": {
+    "style": "imitation",
+    "example": "Beleza, cara, recebi o dataset. Tô dando uma olhada e parece que tem uns outliers estranhos. Quer que eu rode uma análise rápida?",
+    "description": "Estilo que imita a fala natural de um profissional técnico, com leve toque regional, mas sem gírias exageradas. Bom para mensagens informais.",
+    "tone": "natural, técnico, próximo",
+    "max_length": 350,
+    "creativity": 0.7
+  },
+  "narrativo": {
+    "style": "narrativo",
+    "example": "Na penumbra do servidor, os dados pulsavam como um coração digital. Cada linha de código contava uma história, e ele sabia que o próximo commit mudaria tudo.",
+    "description": "Tom envolvente, com descrições ricas, mas contidas. Ideal para relatórios narrativos, posts de blog ou histórias técnicas com emoção.",
+    "tone": "envolvente, descritivo, humano",
+    "max_length": 800,
+    "creativity": 0.8
+  },
+  "tecnico": {
+    "style": "tecnico",
+    "example": "O pipeline utiliza PySpark para processar 10GB de dados em 15 minutos. A arquitetura Delta Lake garante versionamento e otimização de queries.",
+    "description": "Tom objetivo e preciso, voltado para relatórios técnicos, documentações ou apresentações em ciência de dados e engenharia.",
+    "tone": "preciso, técnico, direto",
+    "max_length": 600,
+    "creativity": 0.2
+  },
+  "resumido": {
+    "style": "resumido",
+    "example": "Pipeline otimizado: 10GB processados em 15min. Ajustar índices para reduzir latência.",
+    "description": "Tom direto e conciso, ideal para sumários executivos, notas rápidas ou comunicações curtas em projetos técnicos.",
+    "tone": "conciso, objetivo, claro",
+    "max_length": 200,
+    "creativity": 0.3
+  }
+}

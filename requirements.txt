@@ -1,0 +1,12 @@
+# 65
+transformers
+torch
+Pillow
+sentencepiece
+accelerate
+protobuf
+bitsandbytes
+python-docx
+lingua-language-detector
+python-dotenv
+customtkinter
