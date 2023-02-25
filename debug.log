@@ -1,44 +1,44 @@
-2025-12-01 00:30:45,504 - root - INFO - Logger inicializado. Gravando em: /home/andrefarias/Desenvolvimento/Detector-de-Doppelganger/debug.log
-2025-12-01 00:30:45,667 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-12-01 00:30:45,667 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
-2025-12-01 00:30:48,301 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-12-01 00:30:48,301 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
-2025-12-01 00:30:48,301 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-12-01 00:30:48,301 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
-2025-12-01 00:30:48,716 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
-2025-12-01 00:30:48,717 - root - INFO - Chave HF carregada do .env.
-2025-12-01 00:30:48,717 - root - INFO - Estilos carregados de prompts.json.
-2025-12-01 00:30:48,717 - root - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
-2025-12-01 00:30:48,717 - root - INFO - Chaves de estilo carregadas: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
-2025-12-01 00:30:48,717 - root - INFO - Chaves capitalizadas: ['Default', 'Conversacional', 'Bullets', 'Formal', 'Imitation', 'Narrativo', 'Tecnico', 'Resumido']
-2025-12-01 00:30:48,717 - root - INFO - Carregando modelo detector: roberta-base-openai-detector
-2025-12-01 00:30:48,719 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
-2025-12-01 00:30:48,978 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 200 0
-2025-12-01 00:30:49,205 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 157
-2025-12-01 00:30:49,372 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
-2025-12-01 00:30:49,532 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 307 130
-2025-12-01 00:30:49,702 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 200 1905
-2025-12-01 00:30:49,784 - root - INFO - Modelo detector carregado com sucesso.
-2025-12-01 00:30:49,784 - root - INFO - Carregando modelo avaliador: roberta-base-openai-detector
-2025-12-01 00:30:49,950 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 200 0
-2025-12-01 00:30:50,148 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 157
-2025-12-01 00:30:50,308 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
-2025-12-01 00:30:50,470 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 307 130
-2025-12-01 00:30:50,638 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 200 1905
-2025-12-01 00:30:50,710 - root - INFO - Modelo avaliador carregado com sucesso.
-2025-12-01 00:30:50,710 - root - INFO - Carregando modelo humanizador: unicamp-dl/ptt5-base-portuguese-vocab
-2025-12-01 00:30:50,710 - root - DEBUG - Tentando carregar tokenizer e model de: unicamp-dl/ptt5-base-portuguese-vocab
-2025-12-01 00:30:50,892 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
-2025-12-01 00:30:51,062 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/config.json HTTP/1.1" 307 0
-2025-12-01 00:30:51,098 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/config.json HTTP/1.1" 200 0
-2025-12-01 00:30:51,266 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
-2025-12-01 00:30:51,441 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/unicamp-dl/ptt5-base-portuguese-vocab/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
-2025-12-01 00:30:51,659 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/unicamp-dl/ptt5-base-portuguese-vocab/tree/main?recursive=True&expand=False HTTP/1.1" 200 2622
-2025-12-01 00:30:51,831 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/spiece.model HTTP/1.1" 307 0
-2025-12-01 00:30:51,866 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/spiece.model HTTP/1.1" 200 0
-2025-12-01 00:30:52,189 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/config.json HTTP/1.1" 307 0
-2025-12-01 00:30:52,225 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/config.json HTTP/1.1" 200 0
-2025-12-01 00:30:52,541 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/generation_config.json HTTP/1.1" 404 0
-2025-12-01 00:30:52,709 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
-2025-12-01 00:30:52,715 - root - INFO - Modelo humanizador 'unicamp-dl/ptt5-base-portuguese-vocab' carregado com sucesso.
-2025-12-01 00:30:52,715 - root - DEBUG - Modelo atual definido como: unicamp-dl/ptt5-base-portuguese-vocab
+2025-12-01 13:16:05,928 - root - INFO - Logger inicializado. Gravando em: /home/andrefarias/Desenvolvimento/Detector-de-Doppelganger/debug.log
+2025-12-01 13:16:06,073 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-12-01 13:16:06,073 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
+2025-12-01 13:16:08,728 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-12-01 13:16:08,728 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
+2025-12-01 13:16:08,729 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-12-01 13:16:08,729 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 65536
+2025-12-01 13:16:09,151 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-12-01 13:16:09,151 - root - INFO - Chave HF carregada do .env.
+2025-12-01 13:16:09,152 - root - INFO - Estilos carregados de prompts.json.
+2025-12-01 13:16:09,152 - root - INFO - Estilos de saída carregados: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-12-01 13:16:09,152 - root - INFO - Chaves de estilo carregadas: ['default', 'conversacional', 'bullets', 'formal', 'imitation', 'narrativo', 'tecnico', 'resumido']
+2025-12-01 13:16:09,152 - root - INFO - Chaves capitalizadas: ['Default', 'Conversacional', 'Bullets', 'Formal', 'Imitation', 'Narrativo', 'Tecnico', 'Resumido']
+2025-12-01 13:16:09,152 - root - INFO - Carregando modelo detector: roberta-base-openai-detector
+2025-12-01 13:16:09,154 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-12-01 13:16:09,389 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 200 0
+2025-12-01 13:16:09,610 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 157
+2025-12-01 13:16:09,763 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-12-01 13:16:09,914 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 307 130
+2025-12-01 13:16:10,071 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 200 1905
+2025-12-01 13:16:10,155 - root - INFO - Modelo detector carregado com sucesso.
+2025-12-01 13:16:10,155 - root - INFO - Carregando modelo avaliador: roberta-base-openai-detector
+2025-12-01 13:16:10,307 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /roberta-base-openai-detector/resolve/main/config.json HTTP/1.1" 200 0
+2025-12-01 13:16:10,493 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 157
+2025-12-01 13:16:10,654 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-12-01 13:16:10,805 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 307 130
+2025-12-01 13:16:10,965 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/openai-community/roberta-base-openai-detector/tree/main?recursive=True&expand=False HTTP/1.1" 200 1905
+2025-12-01 13:16:11,042 - root - INFO - Modelo avaliador carregado com sucesso.
+2025-12-01 13:16:11,042 - root - INFO - Carregando modelo humanizador: unicamp-dl/ptt5-base-portuguese-vocab
+2025-12-01 13:16:11,042 - root - DEBUG - Tentando carregar tokenizer e model de: unicamp-dl/ptt5-base-portuguese-vocab
+2025-12-01 13:16:11,201 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-12-01 13:16:11,367 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/config.json HTTP/1.1" 307 0
+2025-12-01 13:16:11,393 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/config.json HTTP/1.1" 200 0
+2025-12-01 13:16:11,554 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-12-01 13:16:11,722 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/unicamp-dl/ptt5-base-portuguese-vocab/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-12-01 13:16:11,899 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/unicamp-dl/ptt5-base-portuguese-vocab/tree/main?recursive=True&expand=False HTTP/1.1" 200 2622
+2025-12-01 13:16:12,103 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/spiece.model HTTP/1.1" 307 0
+2025-12-01 13:16:12,129 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/spiece.model HTTP/1.1" 200 0
+2025-12-01 13:16:12,451 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/config.json HTTP/1.1" 307 0
+2025-12-01 13:16:12,479 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/unicamp-dl/ptt5-base-portuguese-vocab/902768bde1e0650bc2f0814fb08e81fa35bf3ba6/config.json HTTP/1.1" 200 0
+2025-12-01 13:16:12,757 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/generation_config.json HTTP/1.1" 404 0
+2025-12-01 13:16:12,920 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /unicamp-dl/ptt5-base-portuguese-vocab/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-12-01 13:16:12,927 - root - INFO - Modelo humanizador 'unicamp-dl/ptt5-base-portuguese-vocab' carregado com sucesso.
+2025-12-01 13:16:12,927 - root - DEBUG - Modelo atual definido como: unicamp-dl/ptt5-base-portuguese-vocab
