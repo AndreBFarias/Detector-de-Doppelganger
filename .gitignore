@@ -1,19 +1,160 @@
-# Byte-compiled
+# ==============================================
+# AMBIENTES VIRTUAIS PYTHON
+# ==============================================
+venv/
+venv_*/
+.venv/
+env/
+ENV/
+
+# ==============================================
+# PYTHON - Cache e Bytecode
+# ==============================================
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Environments
+# ==============================================
+# CONFIGURACOES SENSIVEIS
+# ==============================================
 .env
-.venv
-env/
-venv/
+.env.local
+.env.*.local
+!.env.example
 
-# IDE settings
+# ==============================================
+# LOGS E ARQUIVOS TEMPORARIOS
+# ==============================================
+*.log
+logs/
+src/logs/*.log
+debug.log
+log_sessao.txt
+
+# ==============================================
+# MODELOS E CACHE HUGGINGFACE
+# ==============================================
+models/
+models/cache/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+*.ggml
+
+# ==============================================
+# DADOS DE USUARIO
+# ==============================================
+data/
+data_input/
+data_output/
+src/temp/
+*.csv
+*.xlsx
+*.json.bak
+
+# ==============================================
+# DESENVOLVIMENTO E DOCUMENTACAO PRIVADA
+# ==============================================
+Dev_log/
+IMPORTANT.md
+IMPORTANT.MD
+.claude/
+CLAUDE.md
+PROMPT_*.md
+*.bak
+*.backup
+assets/*.bak.*
+
+# ==============================================
+# IDEs E EDITORES
+# ==============================================
 .idea/
 .vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+.ropeproject
 
-# OS generated files
+# ==============================================
+# SISTEMA OPERACIONAL
+# ==============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
 
-# Model files
-models/
+# ==============================================
+# TESTES E COBERTURA
+# ==============================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+nosetests.xml
+
+# ==============================================
+# JUPYTER NOTEBOOKS
+# ==============================================
+.ipynb_checkpoints/
+*.ipynb
+
+# ==============================================
+# MYPY E LINTERS
+# ==============================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pylint.d/
+
+# ==============================================
+# DISTRIBUICAO E PACKAGING
+# ==============================================
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==============================================
+# MANTER ESTRUTURAS VAZIAS
+# ==============================================
+!**/.gitkeep
+!src/logs/.gitkeep
+!src/temp/.gitkeep
+!data/.gitkeep

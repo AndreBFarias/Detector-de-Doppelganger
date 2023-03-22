@@ -1,33 +1,78 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import logging
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
 
 from transformers import pipeline
-import logging
 
-logging.basicConfig(level=logging.INFO)
+import config
 
-def test_model():
-    model_name = "roberta-base-openai-detector" # Or the path if local
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
+
+
+def test_detector_model() -> bool:
+    logger.info(f"Testando modelo detector: {config.DETECTOR_MODEL}")
     try:
-        pipe = pipeline("text-classification", model=model_name)
-    except Exception:
-        # Fallback to a common one if the specific one isn't found or local path issue
-        # Assuming the user has it cached or internet access. 
-        # If not, I might need to rely on the existing code's behavior.
-        # But the user ran the app, so it must be there.
-        # Let's try to load from the cache path seen in the logs if possible, 
-        # but 'roberta-base-openai-detector' should work if it's in the cache.
-        print("Could not load model by name, trying to rely on logic deduction.")
-        return
+        pipe = pipeline("text-classification", model=config.DETECTOR_MODEL, device=-1)
 
-    human_text = "The quick brown fox jumps over the lazy dog."
-    ai_text = "As an AI language model, I cannot provide that information."
+        human_text = "O sol brilha forte nesta manha de verao."
+        ai_text = "Como um modelo de linguagem, eu nao tenho capacidade de sentir emocoes."
 
-    print(f"Testing Model: {model_name}")
-    
-    res_human = pipe(human_text)[0]
-    print(f"Human Text: '{human_text}' -> {res_human}")
+        res_human = pipe(human_text)[0]
+        res_ai = pipe(ai_text)[0]
 
-    res_ai = pipe(ai_text)[0]
-    print(f"AI Text: '{ai_text}' -> {res_ai}")
+        logger.info(f"Texto humano: {res_human}")
+        logger.info(f"Texto IA: {res_ai}")
+
+        return True
+    except Exception as e:
+        logger.error(f"Falha ao testar detector: {e}")
+        return False
+
+
+def test_humanizer_models() -> bool:
+    logger.info("Testando modelos humanizadores...")
+    try:
+        from transformers import AutoTokenizer
+
+        for name, path in config.HUMANIZADOR_MAP.items():
+            logger.info(f"Verificando {name}: {path}")
+            tokenizer = AutoTokenizer.from_pretrained(path)
+            logger.info(f"  Tokenizer OK: {tokenizer.__class__.__name__}")
+
+        return True
+    except Exception as e:
+        logger.error(f"Falha ao testar humanizadores: {e}")
+        return False
+
+
+def main() -> int:
+    logger.info("=" * 60)
+    logger.info("Verificacao de Modelos - Detector de Doppelganger")
+    logger.info("=" * 60)
+
+    results = []
+
+    results.append(("Detector", test_detector_model()))
+    results.append(("Humanizadores", test_humanizer_models()))
+
+    logger.info("=" * 60)
+    logger.info("Resultados:")
+    for name, passed in results:
+        status = "OK" if passed else "FALHOU"
+        logger.info(f"  {name}: {status}")
+
+    all_passed = all(r[1] for r in results)
+    return 0 if all_passed else 1
+
 
 if __name__ == "__main__":
-    test_model()
+    sys.exit(main())
+
+
+# "Confie, mas verifique." - Proverbio Russo

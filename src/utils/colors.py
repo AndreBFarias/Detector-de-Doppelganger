@@ -12,11 +12,11 @@ def interpolate_color(start_hex, end_hex, factor):
     """
     c1 = hex_to_rgb(start_hex)
     c2 = hex_to_rgb(end_hex)
-    
+
     r = int(c1[0] + (c2[0] - c1[0]) * factor)
     g = int(c1[1] + (c2[1] - c1[1]) * factor)
     b = int(c1[2] + (c2[2] - c1[2]) * factor)
-    
+
     return rgb_to_hex((r, g, b))
 
 def get_color_for_percentage(percentage, inverse=False):
@@ -27,12 +27,12 @@ def get_color_for_percentage(percentage, inverse=False):
     """
     # Cores Dracula Theme adaptadas
     GREEN = "#50FA7B"
-    RED = "#FF5555" 
-    
+    RED = "#FF5555"
+
     # Se quiser "Vinho", podemos usar um vermelho mais escuro/intenso, mas #FF5555 é bom para dark mode.
     # Vamos tentar um vermelho mais "vinho" se solicitado, mas legibilidade é chave.
     # Vou usar #FF5555 por enquanto.
-    
+
     if inverse:
         # Similarity: 0% Green -> 100% Red
         return interpolate_color(GREEN, RED, percentage)
