@@ -6,7 +6,7 @@ readme = "README.md"
 license = {text = "GPL-3.0"}
 requires-python = ">=3.10"
 authors = [
-    {name = "Andre Farias"}
+    {name = "Contributors"}
 ]
 keywords = ["ai", "detection", "humanization", "nlp", "transformers"]
 classifiers = [
