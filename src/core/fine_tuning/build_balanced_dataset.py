@@ -224,6 +224,29 @@ AI_PROMPTS_FORMAL = [
     "Redija um texto FORMAL sobre inovação científica e desenvolvimento tecnológico.",
 ]
 
+AI_PROMPTS_FORMAL_SHORT = [
+    "Escreva UMA frase FORMAL sobre inteligência artificial.",
+    "Escreva UMA frase FORMAL sobre educação.",
+    "Escreva UMA frase FORMAL sobre tecnologia.",
+    "Escreva UMA frase FORMAL sobre meio ambiente.",
+    "Escreva UMA frase FORMAL sobre saúde pública.",
+    "Escreva UMA frase FORMAL sobre economia.",
+    "Escreva UMA frase FORMAL sobre ciência.",
+    "Escreva UMA frase FORMAL sobre sociedade moderna.",
+    "Escreva UMA frase FORMAL sobre desenvolvimento sustentável.",
+    "Escreva UMA frase FORMAL sobre inovação.",
+    "Escreva DUAS frases FORMAIS e curtas sobre inteligência artificial.",
+    "Escreva DUAS frases FORMAIS e curtas sobre mudanças climáticas.",
+    "Escreva DUAS frases FORMAIS e curtas sobre transformação digital.",
+    "Escreva DUAS frases FORMAIS e curtas sobre globalização.",
+    "Escreva DUAS frases FORMAIS e curtas sobre políticas públicas.",
+    "Escreva DUAS frases FORMAIS e curtas sobre mercado de trabalho.",
+    "Escreva DUAS frases FORMAIS e curtas sobre urbanização.",
+    "Escreva DUAS frases FORMAIS e curtas sobre diversidade cultural.",
+    "Escreva DUAS frases FORMAIS e curtas sobre ética profissional.",
+    "Escreva DUAS frases FORMAIS e curtas sobre responsabilidade social.",
+]
+
 
 def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
     if not config.GEMINI_API_KEY:
@@ -242,9 +265,11 @@ def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
 
         informal_prompts = AI_PROMPTS + AI_PROMPTS_MEDIUM
         formal_prompts = AI_PROMPTS_FORMAL
+        formal_short_prompts = AI_PROMPTS_FORMAL_SHORT
 
-        informal_count = num_samples // 2
-        formal_count = num_samples - informal_count
+        informal_count = num_samples // 3
+        formal_count = num_samples // 3
+        formal_short_count = num_samples - informal_count - formal_count
 
         for _ in range(informal_count):
             prompt = random.choice(informal_prompts)
@@ -269,11 +294,13 @@ def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
                 text = " ".join(text.split())
 
                 if text and 20 < len(text) < 500:
-                    samples.append({
-                        "text": text,
-                        "label": 1,
-                        "source": "gemini-informal",
-                    })
+                    samples.append(
+                        {
+                            "text": text,
+                            "label": 1,
+                            "source": "gemini-informal",
+                        }
+                    )
                     logger.info(f"Informal {len(samples)}/{num_samples}: {text[:50]}...")
 
                 time.sleep(0.5)
@@ -306,11 +333,13 @@ def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
                 text = " ".join(text.split())
 
                 if text and 30 < len(text) < 600:
-                    samples.append({
-                        "text": text,
-                        "label": 1,
-                        "source": "gemini-formal",
-                    })
+                    samples.append(
+                        {
+                            "text": text,
+                            "label": 1,
+                            "source": "gemini-formal",
+                        }
+                    )
                     logger.info(f"Formal {len(samples)}/{num_samples}: {text[:50]}...")
 
                 time.sleep(0.5)
@@ -320,7 +349,48 @@ def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
                 time.sleep(2)
                 continue
 
-        logger.info(f"Geradas {len(samples)} amostras com Gemini ({informal_count} informal + {len(samples) - informal_count} formal).")
+        for _ in range(formal_short_count):
+            prompt = random.choice(formal_short_prompts)
+            system_instruction = (
+                "Você é um redator acadêmico escrevendo de forma FORMAL. "
+                "Responda APENAS com o texto solicitado, sem introduções, sem formatação markdown, "
+                "sem listas, sem títulos, sem asteriscos. Use vocabulário culto. "
+                "MÁXIMO 1-2 frases curtas."
+            )
+
+            try:
+                response = model.generate_content(
+                    f"{system_instruction}\n\n{prompt}",
+                    generation_config={
+                        "temperature": 0.7,
+                        "max_output_tokens": 100,
+                    },
+                )
+
+                text = response.text.strip()
+                text = text.replace("*", "").replace("#", "").replace("`", "")
+                text = " ".join(text.split())
+
+                if text and 15 < len(text) < 200:
+                    samples.append(
+                        {
+                            "text": text,
+                            "label": 1,
+                            "source": "gemini-formal-short",
+                        }
+                    )
+                    logger.info(f"Formal-short {len(samples)}/{num_samples}: {text[:50]}...")
+
+                time.sleep(0.5)
+
+            except Exception as e:
+                logger.warning(f"Falha ao gerar amostra formal curta: {e}")
+                time.sleep(2)
+                continue
+
+        logger.info(
+            f"Geradas {len(samples)} amostras com Gemini ({informal_count} informal + {formal_count} formal + {formal_short_count} formal-short)."
+        )
         return samples
 
     except ImportError:
@@ -329,10 +399,7 @@ def generate_ai_samples_gemini(num_samples: int = 100) -> list[dict[str, Any]]:
 
 
 def build_balanced_dataset() -> None:
-    human_samples = [
-        {"text": text, "label": 0, "source": "manual"}
-        for text in HUMAN_SAMPLES_PT
-    ]
+    human_samples = [{"text": text, "label": 0, "source": "manual"} for text in HUMAN_SAMPLES_PT]
     logger.info(f"Amostras humanas: {len(human_samples)}")
 
     ai_samples = generate_ai_samples_gemini(len(human_samples))

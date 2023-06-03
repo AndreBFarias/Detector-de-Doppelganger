@@ -12,6 +12,7 @@ class SplashScreen(customtkinter.CTkToplevel):
     """
     Janela de splash screen que carrega os modelos em segundo plano.
     """
+
     def __init__(self, master):
         super().__init__(master)
 
@@ -22,8 +23,8 @@ class SplashScreen(customtkinter.CTkToplevel):
         # Centraliza a janela
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
-        x_cordinate = int((screen_width/2) - (600/2))
-        y_cordinate = int((screen_height/2) - (400/2))
+        x_cordinate = int((screen_width / 2) - (600 / 2))
+        y_cordinate = int((screen_height / 2) - (400 / 2))
         self.geometry(f"600x400+{x_cordinate}+{y_cordinate}")
 
         # Configura o layout da grade
@@ -36,11 +37,7 @@ class SplashScreen(customtkinter.CTkToplevel):
         self.frame.grid_rowconfigure(2, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
 
-        self.logo_path = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
-            "assets",
-            "icon.png"
-        )
+        self.logo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "assets", "icon.png")
 
         try:
             self.logo_image = Image.open(self.logo_path)
@@ -59,17 +56,13 @@ class SplashScreen(customtkinter.CTkToplevel):
 
         # Título
         self.title_label = customtkinter.CTkLabel(
-            self.frame,
-            text="Detector de Doppelgänger",
-            font=customtkinter.CTkFont(size=24, weight="bold")
+            self.frame, text="Detector de Doppelgänger", font=customtkinter.CTkFont(size=24, weight="bold")
         )
         self.title_label.pack(pady=(0, 10))
 
         # Status
         self.status_label = customtkinter.CTkLabel(
-            self.frame,
-            text="Iniciando... Carregando modelos de IA.",
-            font=customtkinter.CTkFont(size=14)
+            self.frame, text="Iniciando... Carregando modelos de IA.", font=customtkinter.CTkFont(size=14)
         )
         self.status_label.pack(pady=5)
 
@@ -104,7 +97,7 @@ class SplashScreen(customtkinter.CTkToplevel):
             # A main window (ou o AppCore) terá que lidar com o modelo não carregado
             print(f"Erro crítico ao carregar modelos: {e}")
             self.update_status(f"Erro ao carregar: {e}", 0.9)
-            time.sleep(2) # Dá tempo para ler o erro
+            time.sleep(2)  # Dá tempo para ler o erro
             self.after(0, self.finish)
 
     def start_download(self, callback):

@@ -40,9 +40,18 @@ SINONIMOS_PT = {
 }
 
 CONECTIVOS_HUMANOS = [
-    "bom,", "olha,", "veja bem,", "tipo assim,", "sabe,",
-    "na real,", "pra ser sincero,", "falando nisso,", "a propósito,",
-    "enfim,", "de qualquer forma,", "seja como for,",
+    "bom,",
+    "olha,",
+    "veja bem,",
+    "tipo assim,",
+    "sabe,",
+    "na real,",
+    "pra ser sincero,",
+    "falando nisso,",
+    "a propósito,",
+    "enfim,",
+    "de qualquer forma,",
+    "seja como for,",
 ]
 
 EXPRESSOES_IDIOMATICAS = [
@@ -87,10 +96,7 @@ class AdversarialHumanizer:
         if not indices_candidatos:
             return texto
 
-        indices_selecionados = random.sample(
-            indices_candidatos,
-            min(num_substituicoes, len(indices_candidatos))
-        )
+        indices_selecionados = random.sample(indices_candidatos, min(num_substituicoes, len(indices_candidatos)))
 
         for idx in indices_selecionados:
             palavra_original = palavras[idx]
@@ -156,9 +162,13 @@ class AdversarialHumanizer:
                 sentencas[0] = conectivo.capitalize() + " " + primeira
                 texto = " ".join(sentencas)
 
-        texto = re.sub(r"\bvocê\b", lambda m: random.choice(["você", "vc"]) if random.random() < 0.05 else m.group(), texto)
+        texto = re.sub(
+            r"\bvocê\b", lambda m: random.choice(["você", "vc"]) if random.random() < 0.05 else m.group(), texto
+        )
         texto = re.sub(r"\bporque\b", lambda m: "pq" if random.random() < 0.03 else m.group(), texto)
-        texto = re.sub(r"\bmuito\b", lambda m: random.choice(["muito", "mt"]) if random.random() < 0.03 else m.group(), texto)
+        texto = re.sub(
+            r"\bmuito\b", lambda m: random.choice(["muito", "mt"]) if random.random() < 0.03 else m.group(), texto
+        )
 
         return texto
 

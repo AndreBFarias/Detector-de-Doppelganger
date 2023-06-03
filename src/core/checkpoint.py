@@ -20,7 +20,7 @@ def load_checkpoint(file_path: str) -> dict[str, Any]:
 
 def save_checkpoint(file_path: str, data: dict[str, Any]) -> None:
     try:
-        with open(file_path, 'w') as f:
+        with open(file_path, "w") as f:
             json.dump(data, f)
         logging.info(f"Checkpoint salvo em {file_path}.")
     except Exception as e:

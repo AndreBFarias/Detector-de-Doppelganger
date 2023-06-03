@@ -31,7 +31,7 @@ def run_test_module(path: str, name: str) -> bool:
         [sys.executable, "-m", "pytest", path, "-v", "--tb=short", "-q"],
         capture_output=True,
         text=True,
-        cwd=Path(__file__).parent
+        cwd=Path(__file__).parent,
     )
 
     if result.returncode == 0:

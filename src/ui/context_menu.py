@@ -15,7 +15,7 @@ class ContextMenu:
             activebackground="#50FA7B",
             activeforeground="#181825",
             bd=0,
-            relief="flat"
+            relief="flat",
         )
 
         # Definir opções do menu
@@ -30,7 +30,7 @@ class ContextMenu:
             self.menu.add_separator()
             self.menu.add_command(label="Salvar Como...", command=self.save_as)
         else:
-             # Adiciona Salvar Como mesmo sem callback (usando implementação padrão)
+            # Adiciona Salvar Como mesmo sem callback (usando implementação padrão)
             self.menu.add_separator()
             self.menu.add_command(label="Salvar Como...", command=self.save_as)
 
@@ -61,7 +61,7 @@ class ContextMenu:
             self.textbox.clipboard_clear()
             self.textbox.clipboard_append(text)
         except tkinter.TclError:
-            pass # Nada selecionado
+            pass  # Nada selecionado
 
     def paste(self):
         try:
@@ -87,7 +87,7 @@ class ContextMenu:
         logging.info("Selecionar Tudo acionado.")
         self.textbox.tag_add("sel", "1.0", "end")
         self.textbox.mark_set("insert", "end")
-        return "break" # Impede propagação se necessário
+        return "break"  # Impede propagação se necessário
 
     def save_as(self, event=None):
         logging.info("Salvar Como acionado.")
@@ -101,12 +101,11 @@ class ContextMenu:
                 return "break"
 
             filename = filedialog.asksaveasfilename(
-                defaultextension=".txt",
-                filetypes=[("Arquivos de Texto", "*.txt"), ("Todos os Arquivos", "*.*")]
+                defaultextension=".txt", filetypes=[("Arquivos de Texto", "*.txt"), ("Todos os Arquivos", "*.*")]
             )
             if filename:
                 try:
-                    with open(filename, 'w', encoding='utf-8') as f:
+                    with open(filename, "w", encoding="utf-8") as f:
                         f.write(text)
                 except Exception as e:
                     print(f"Erro ao salvar: {e}")
