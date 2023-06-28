@@ -13,6 +13,7 @@ from src.core.detector_api import detectar_ia_api
 from src.core.detector_local import detectar_ia_local
 from src.core.humanizador_api import humanizar_api
 from src.core.humanizador_local import humanizar_local
+from src.core.paraphrase_engine import get_ollama_engine
 
 logger = logging.getLogger(__name__)
 
@@ -71,6 +72,13 @@ class DoppelgangerEngine:
     def humanize(self, texto: str, style: str = "casual") -> str:
         if self.humanizer_mode == "api":
             return humanizar_api(texto, style, self.api_provider)
+        elif self.humanizer_mode == "ollama":
+            engine = get_ollama_engine()
+            if engine.is_available():
+                candidates = engine.generate_paraphrases(texto, num_candidates=3, style="default")
+                if candidates and candidates[0].text != texto:
+                    return candidates[0].text
+            return humanizar_local(texto)
         return humanizar_local(texto)
 
     def process(self, texto: str, style: str = "casual") -> ProcessResult:
@@ -160,6 +168,71 @@ class DoppelgangerEngine:
             iteracoes=iteracoes,
             sucesso=sucesso,
             mensagem=f"Score reduzido de {score_inicial:.2%} para {score_final:.2%} ({len(iteracoes)} iteracoes)",
+        )
+
+    def process_ollama(self, texto: str) -> ProcessResult:
+        if not texto.strip():
+            return ProcessResult(
+                texto_original=texto,
+                texto_final=texto,
+                score_inicial=0.0,
+                score_final=0.0,
+                iteracoes=[],
+                sucesso=False,
+                mensagem="Texto vazio",
+            )
+
+        self._report_progress("Analisando texto original...", 0.1)
+        score_inicial, label_inicial = self.detect(texto)
+
+        if score_inicial < self.target_score:
+            self._report_progress("Texto ja parece humano!", 1.0)
+            return ProcessResult(
+                texto_original=texto,
+                texto_final=texto,
+                score_inicial=score_inicial,
+                score_final=score_inicial,
+                iteracoes=[],
+                sucesso=True,
+                mensagem=f"Texto ja possui score baixo: {score_inicial:.2%}",
+            )
+
+        self._report_progress("Processando via Ollama (iterativo)...", 0.3)
+
+        engine = get_ollama_engine()
+        if not engine.is_available():
+            self._report_progress("Ollama indisponivel, usando fallback...", 0.5)
+            return self.process(texto)
+
+        texto_final, score_final, num_iters = engine.iterative_paraphrase(
+            texto,
+            self.detect,
+            max_iterations=self.max_iterations,
+            num_candidates=5,
+            min_length_ratio=0.4,
+        )
+
+        self._report_progress("Processamento concluido", 1.0)
+
+        sucesso = score_final < score_inicial * 0.8
+
+        iteracoes = [
+            IterationResult(
+                texto=texto_final,
+                score_ia=score_final,
+                label=f"Ollama ({num_iters} iters)",
+                iteracao=num_iters,
+            )
+        ]
+
+        return ProcessResult(
+            texto_original=texto,
+            texto_final=texto_final,
+            score_inicial=score_inicial,
+            score_final=score_final,
+            iteracoes=iteracoes,
+            sucesso=sucesso,
+            mensagem=f"Score {score_inicial:.2%} -> {score_final:.2%} via Ollama ({num_iters} iteracoes)",
         )
 
 

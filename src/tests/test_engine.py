@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.core.adversarial import SINONIMOS_PT, AdversarialHumanizer, humanizar_adversarial
+from src.core.adversarial import CONECTIVOS_IA, AdversarialHumanizer, humanizar_adversarial
 
 
 class TestAdversarialHumanizer:
@@ -37,10 +37,10 @@ class TestAdversarialHumanizer:
         result = humanizer.humanize(texto)
         assert result is not None
 
-    def test_sinonimos_dict_exists(self) -> None:
-        assert len(SINONIMOS_PT) > 0
-        assert "entretanto" in SINONIMOS_PT
-        assert "portanto" in SINONIMOS_PT
+    def test_conectivos_dict_exists(self) -> None:
+        assert len(CONECTIVOS_IA) > 0
+        assert "entretanto," in CONECTIVOS_IA
+        assert "portanto," in CONECTIVOS_IA
 
 
 class TestHumanizarAdversarial:

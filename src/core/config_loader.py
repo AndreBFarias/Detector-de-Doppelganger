@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 
 def load_config() -> dict[str, Any]:
-    config_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-    env_path = os.path.join(config_dir, ".env")
-    prompts_path = os.path.join(config_dir, "prompts.json")
+    project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+    env_path = os.path.join(project_root, ".env")
+    prompts_path = os.path.join(project_root, "prompts.json")
 
     if os.path.exists(env_path):
         load_dotenv(env_path)

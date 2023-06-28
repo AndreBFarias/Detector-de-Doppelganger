@@ -63,8 +63,10 @@ class LeftMenu(customtkinter.CTkFrame):
         )
         self.mode_label.grid(row=0, column=0, padx=20, pady=(5, 2))
 
-        self.mode_menu = customtkinter.CTkOptionMenu(self.models_frame, values=["Local (Offline)", "API (Groq/Gemini)"])
-        self.mode_menu.set("Local (Offline)")
+        self.mode_menu = customtkinter.CTkOptionMenu(
+            self.models_frame, values=["Local (Offline)", "Ollama (Local LLM)", "API (Groq/Gemini)"]
+        )
+        self.mode_menu.set("Ollama (Local LLM)")
         self.mode_menu.grid(row=1, column=0, padx=20, pady=2, sticky="ew")
 
         self.model_label = customtkinter.CTkLabel(
@@ -80,8 +82,23 @@ class LeftMenu(customtkinter.CTkFrame):
         )
         self.model_menu.grid(row=3, column=0, padx=20, pady=2, sticky="ew")
 
+        self.priority_label = customtkinter.CTkLabel(
+            self.models_frame,
+            text="Prioridade",
+            text_color=config.ACCENT_GREEN,
+            font=customtkinter.CTkFont(size=14, weight="bold"),
+        )
+        self.priority_label.grid(row=4, column=0, padx=20, pady=(5, 2))
+
+        self.priority_menu = customtkinter.CTkOptionMenu(
+            self.models_frame,
+            values=["Balanceado", "Reducao Maxima", "Preservar Conteudo"],
+        )
+        self.priority_menu.set("Balanceado")
+        self.priority_menu.grid(row=5, column=0, padx=20, pady=2, sticky="ew")
+
         self.creativity_label = customtkinter.CTkLabel(self.models_frame, text="Nivel de Criatividade")
-        self.creativity_label.grid(row=4, column=0, padx=20, pady=(5, 0), sticky="w")
+        self.creativity_label.grid(row=6, column=0, padx=20, pady=(5, 0), sticky="w")
 
         self.creativity_slider = customtkinter.CTkSlider(
             self.models_frame,
@@ -92,10 +109,10 @@ class LeftMenu(customtkinter.CTkFrame):
             button_hover_color=config.ACCENT_PINK,
         )
         self.creativity_slider.set(0.8)
-        self.creativity_slider.grid(row=5, column=0, padx=20, pady=(0, 2), sticky="ew")
+        self.creativity_slider.grid(row=7, column=0, padx=20, pady=(0, 2), sticky="ew")
 
         self.intensity_label = customtkinter.CTkLabel(self.models_frame, text="Intensidade do Processamento")
-        self.intensity_label.grid(row=6, column=0, padx=20, pady=(2, 0), sticky="w")
+        self.intensity_label.grid(row=8, column=0, padx=20, pady=(2, 0), sticky="w")
 
         self.intensity_slider = customtkinter.CTkSlider(
             self.models_frame,
@@ -106,7 +123,7 @@ class LeftMenu(customtkinter.CTkFrame):
             button_hover_color=config.ACCENT_PINK,
         )
         self.intensity_slider.set(3)
-        self.intensity_slider.grid(row=7, column=0, padx=20, pady=(0, 5), sticky="ew")
+        self.intensity_slider.grid(row=9, column=0, padx=20, pady=(0, 5), sticky="ew")
 
         # --- BLOCO 3: AÇÕES DE ENTRADA E PROCESSAMENTO ---
         self.input_frame = customtkinter.CTkFrame(self, fg_color="transparent", border_width=0)

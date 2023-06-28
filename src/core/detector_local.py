@@ -101,6 +101,21 @@ class DetectorLocal:
     def get_model_name(self) -> str:
         return self._model_name or "Nao carregado"
 
+    def unload(self) -> None:
+        if self._pipeline is not None:
+            del self._pipeline
+            self._pipeline = None
+        self._model_name = None
+
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+
+        import gc
+
+        gc.collect()
+        logger.info("Detector descarregado e memoria liberada.")
+
 
 def get_detector() -> DetectorLocal:
     return DetectorLocal()
