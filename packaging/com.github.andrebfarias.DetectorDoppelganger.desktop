@@ -6,4 +6,3 @@ Icon=com.github.andrebfarias.DetectorDoppelganger
 Type=Application
 Categories=Utility;TextTools;
 Terminal=false
-StartupNotify=true
