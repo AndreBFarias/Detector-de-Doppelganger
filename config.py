@@ -92,6 +92,10 @@ INPUT_BORDER = COLORS["input_border"]
 OUTPUT_BG = COLORS["output_bg"]
 OUTPUT_BORDER = COLORS["output_border"]
 
+UI_CORNER_RADIUS = 12
+UI_BORDER_WIDTH = 2
+UI_BUTTON_HEIGHT = 40
+
 THEME_PATH = SRC_DIR / "utils" / "ctk_theme.json"
 PROMPTS_PATH = APP_DIR / "prompts.json"
 

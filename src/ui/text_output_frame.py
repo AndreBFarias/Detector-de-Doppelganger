@@ -15,7 +15,7 @@ class TextOutputFrame(customtkinter.CTkFrame):
     HEADER_COLOR = config.ACCENT_GREEN
     TEXTBOX_BG = config.OUTPUT_BG
     TEXTBOX_BORDER = config.OUTPUT_BORDER
-    CORNER_RADIUS = 12
+    CORNER_RADIUS = config.UI_CORNER_RADIUS
 
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
@@ -47,7 +47,7 @@ class TextOutputFrame(customtkinter.CTkFrame):
             self,
             fg_color=self.TEXTBOX_BG,
             corner_radius=self.CORNER_RADIUS,
-            border_width=2,
+            border_width=config.UI_BORDER_WIDTH,
             border_color=self.TEXTBOX_BORDER,
         )
         self.textbox_frame.grid(row=1, column=0, padx=5, pady=(5, 0), sticky="nsew")

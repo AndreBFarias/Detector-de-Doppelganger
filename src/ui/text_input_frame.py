@@ -15,7 +15,7 @@ class TextInputFrame(customtkinter.CTkFrame):
     HEADER_COLOR = config.ACCENT_CYAN
     TEXTBOX_BG = config.INPUT_BG
     TEXTBOX_BORDER = config.INPUT_BORDER
-    CORNER_RADIUS = 4
+    CORNER_RADIUS = config.UI_CORNER_RADIUS
 
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
@@ -47,7 +47,7 @@ class TextInputFrame(customtkinter.CTkFrame):
             self,
             fg_color=self.TEXTBOX_BG,
             corner_radius=self.CORNER_RADIUS,
-            border_width=1,
+            border_width=config.UI_BORDER_WIDTH,
             border_color=self.TEXTBOX_BORDER,
         )
         self.textbox_frame.grid(row=1, column=0, padx=5, pady=(5, 0), sticky="nsew")

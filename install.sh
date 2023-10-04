@@ -59,13 +59,31 @@ fi
 "${SCRIPT_DIR}/venv/bin/pip" install -r "${SCRIPT_DIR}/requirements.txt" || { echo "ERRO: Falha ao instalar pacotes Python."; exit 1; }
 
 echo "[5/5] Configurando atalho e ícone..."
+echo "Gerando ícones..."
+"${SCRIPT_DIR}/venv/bin/python3" "${SCRIPT_DIR}/scripts/icon_resizer.py" || echo "Aviso: Falha ao gerar ícones."
+
 if [ ! -f "${ICON_SOURCE_PATH}" ]; then
     echo "ERRO: Ícone '${ICON_SOURCE_PATH}' não encontrado!"
     exit 1
 fi
 
-$SUDO_CMD mkdir -p "${ICON_INSTALL_DIR}"
-cp "${ICON_SOURCE_PATH}" "${ICON_INSTALL_PATH}" || { echo "ERRO: Falha ao copiar ícone."; exit 1; }
+# Instalação de ícones em múltiplos tamanhos para evitar serrilhado no dock
+echo "Instalando conjunto de ícones..."
+for size in 16 32 48 64 128 256 512; do
+    ICON_SRC="${SCRIPT_DIR}/assets/icon_${size}x${size}.png"
+
+    # Determina o diretório de destino baseado no tipo de instalação (User ou System)
+    if [[ -n "$SUDO_CMD" ]]; then
+        TARGET_ICON_DIR="/usr/local/share/icons/hicolor/${size}x${size}/apps"
+    else
+        TARGET_ICON_DIR="${HOME}/.local/share/icons/hicolor/${size}x${size}/apps"
+    fi
+
+    if [ -f "${ICON_SRC}" ]; then
+        $SUDO_CMD mkdir -p "${TARGET_ICON_DIR}"
+        $SUDO_CMD cp "${ICON_SRC}" "${TARGET_ICON_DIR}/${ICON_NAME}.png"
+    fi
+done
 
 if command -v gtk-update-icon-cache &> /dev/null; then
     CACHE_DIR=""
@@ -84,7 +102,7 @@ $SUDO_CMD printf "[Desktop Entry]\nVersion=1.0\nName=%s\nComment=Identificador e
     "${EXEC_COMMAND}" \
     "${ICON_NAME}" \
     "${CATEGORIES}" \
-    "${APP_NAME}" \
+    "Detector-doppelganger" \
     "${SCRIPT_DIR}" \
     > "${DESKTOP_FILE_PATH}" || { echo "ERRO: Falha ao criar arquivo .desktop."; exit 1; }
 

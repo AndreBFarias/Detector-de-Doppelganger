@@ -35,9 +35,9 @@ class LeftMenu(customtkinter.CTkFrame):
             logo_path = os.path.join(config.ASSETS_DIR, "icon.png")
 
             if os.path.exists(logo_path):
-                # Exibe o ícone em 180x180 no menu
+                # Exibe o ícone em 140x140 no menu
                 self.logo_image = customtkinter.CTkImage(
-                    light_image=Image.open(logo_path), dark_image=Image.open(logo_path), size=(180, 180)
+                    light_image=Image.open(logo_path), dark_image=Image.open(logo_path), size=(140, 140)
                 )
                 self.logo_label = customtkinter.CTkLabel(self.logo_frame, image=self.logo_image, text="")
                 self.logo_label.grid(row=0, column=0)
@@ -149,7 +149,7 @@ class LeftMenu(customtkinter.CTkFrame):
             self.input_frame,
             text="Selecionar Arquivo",
             text_color="black",
-            height=40,
+            height=config.UI_BUTTON_HEIGHT,
             font=customtkinter.CTkFont(size=14, weight="bold"),
         )
         self.select_file_button.grid(row=1, column=0, padx=20, pady=2, sticky="ew")
@@ -158,7 +158,7 @@ class LeftMenu(customtkinter.CTkFrame):
             self.input_frame,
             text="Colar Texto",
             text_color="black",
-            height=40,
+            height=config.UI_BUTTON_HEIGHT,
             font=customtkinter.CTkFont(size=14, weight="bold"),
         )
         self.paste_button.grid(row=2, column=0, padx=20, pady=2, sticky="ew")
@@ -166,7 +166,7 @@ class LeftMenu(customtkinter.CTkFrame):
         self.humanize_button = customtkinter.CTkButton(
             self.input_frame,
             text="Humanizar",
-            height=40,
+            height=config.UI_BUTTON_HEIGHT,
             fg_color=config.ACCENT_GREEN,
             text_color="black",
             font=customtkinter.CTkFont(size=14, weight="bold"),
@@ -208,7 +208,7 @@ class LeftMenu(customtkinter.CTkFrame):
         self.copy_button = customtkinter.CTkButton(
             self.output_frame,
             text="Copiar Essência",
-            height=40,
+            height=config.UI_BUTTON_HEIGHT,
             fg_color=config.ACCENT_PURPLE,
             hover_color=config.ACCENT_PINK,
             text_color="black",
@@ -219,7 +219,7 @@ class LeftMenu(customtkinter.CTkFrame):
         self.save_button = customtkinter.CTkButton(
             self.output_frame,
             text="Salvar Como...",
-            height=40,
+            height=config.UI_BUTTON_HEIGHT,
             fg_color=config.ACCENT_PURPLE,
             hover_color=config.ACCENT_PINK,
             text_color="black",

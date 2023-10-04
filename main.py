@@ -23,7 +23,7 @@ def main() -> int:
         return 1
 
     try:
-        root = customtkinter.CTk()
+        root = customtkinter.CTk(className="detector-doppelganger")
         root.withdraw()
 
         def start_main_app() -> None:

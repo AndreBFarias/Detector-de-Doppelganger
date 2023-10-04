@@ -3,7 +3,7 @@ import threading
 import time
 
 import customtkinter
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageFilter
 
 from src.core.models import ModelLoader
 
@@ -12,26 +12,34 @@ def create_logo_with_shadow(image: Image.Image, size: tuple[int, int], shadow_ra
     padding = shadow_radius * 2
     canvas_size = (size[0] + padding, size[1] + padding)
 
+    # Prepare input image
     img = image.copy()
     if img.mode != "RGBA":
         img = img.convert("RGBA")
 
+    # High-quality resize
     img = img.resize(size, Image.Resampling.LANCZOS)
 
-    shadow = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
-    shadow_layer = Image.new("RGBA", size, (0, 0, 0, 0))
-
+    # Extract alpha channel to create shadow mask
     r, g, b, a = img.split()
-    shadow_layer.putalpha(a)
 
-    shadow_draw = ImageDraw.Draw(shadow_layer)
-    shadow_draw.bitmap((0, 0), a, fill=(0, 0, 0, 180))
+    # Create a solid black image for the shadow
+    shadow_color = Image.new("RGBA", size, (0, 0, 0, 180))
 
+    # Create the shadow layer using the alpha channel as mask
+    # This preserves the anti-aliasing of the original edges
+    shadow_layer = Image.new("RGBA", size, (0, 0, 0, 0))
+    shadow_layer.paste(shadow_color, mask=a)
+
+    # Create the full canvas for the shadow
+    shadow = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
     offset = padding // 2
     shadow.paste(shadow_layer, (offset, offset))
 
+    # Apply Blur
     shadow = shadow.filter(ImageFilter.GaussianBlur(radius=shadow_radius))
 
+    # Composite the image over the shadow
     result = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
     result = Image.alpha_composite(result, shadow)
     result.paste(img, (offset, offset), img)
@@ -76,7 +84,8 @@ class SplashScreen(customtkinter.CTkToplevel):
 
         try:
             self.logo_image = Image.open(self.logo_path)
-            logo_with_shadow = create_logo_with_shadow(self.logo_image, (120, 120), shadow_radius=10)
+            # Generate larger key for better downscaling (High DPI support)
+            logo_with_shadow = create_logo_with_shadow(self.logo_image, (300, 300), shadow_radius=20)
             self.logo_ctk = customtkinter.CTkImage(
                 light_image=logo_with_shadow, dark_image=logo_with_shadow, size=(150, 150)
             )
