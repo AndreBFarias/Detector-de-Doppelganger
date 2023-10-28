@@ -159,3 +159,6 @@ pip-delete-this-directory.txt
 !src/logs/.gitkeep
 !src/temp/.gitkeep
 !data/.gitkeep
+
+# Arquivo pessoal externo
+KIMI.md
