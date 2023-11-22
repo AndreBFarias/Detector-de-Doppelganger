@@ -15,9 +15,9 @@
 
 ---
 
-### Descricao
+### Descrição
 
-**v1.0** - Aplicacao desktop para Linux que detecta e humaniza textos gerados por IA. Suporta tres modos de operacao: Local (offline), Ollama (LLM local) e API (Groq/Gemini). Detector fine-tuned para PT-BR com alta acuracia. **Novo: Reducao de score de IA de ate 50% via Ollama.**
+**v1.0** - Aplicação desktop para Linux que detecta e humaniza textos gerados por IA. Suporta três modos de operação: Local (offline), Ollama (LLM local) e API (Groq/Gemini). Detector fine-tuned para PT-BR com alta acurácia. **Novo: Redução de score de IA de até 50% via Ollama.**
 
 ---
 
@@ -41,9 +41,9 @@
 
 ---
 
-### Instalacao
+### Instalação
 
-**Pre-requisitos:**
+**Pré-requisitos:**
 - Python 3.10+
 - `python3-venv`
 - `git`
