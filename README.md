@@ -57,9 +57,9 @@ chmod +x install.sh uninstall.sh
 ./install.sh
 ```
 
-O instalador cria ambiente virtual, baixa dependencias e registra atalho no sistema.
+O instalador cria ambiente virtual, baixa dependências e registra atalho no sistema.
 
-**Configuracao API (Opcional):**
+**Configuração API (Opcional):**
 
 Copie `.env.example` para `.env` e configure suas chaves:
 ```bash
@@ -144,10 +144,10 @@ python -m src.core.fine_tuning.evaluate_model
 
 ---
 
-### Limitacoes
+### Limitações
 
-- Deteccao menos precisa em textos curtos (<100 palavras)
-- Textos IA formais muito curtos podem ser subdetetados
+- Detecção menos precisa em textos curtos (<100 palavras)
+- Textos IA formais muito curtos podem ser subdetectados
 - Modelos grandes requerem 4GB+ RAM
 
 ---
