@@ -29,15 +29,15 @@
 
 ### Funcionalidades
 
-- **Deteccao de IA:** Modelo fine-tuned para portugues brasileiro (distilbert-multilingual)
-- **Humanizacao via Ollama:** LLM local (llama3.2, gemma2, phi3) com reducao de ate 50%
-- **Tres Modos de Prioridade:** Balanceado, Reducao Maxima ou Preservar Conteudo
-- **Modo Triplo:** Operacao Local (offline), Ollama (LLM local) ou API (Groq/Gemini)
-- **Tecnicas Adversariais:** Remocao de marcadores de IA, parafrase iterativa
-- **Avaliacao de Naturalidade:** Score de fluencia usando analise linguistica
+- **Detecção de IA:** Modelo fine-tuned para português brasileiro (distilbert-multilingual)
+- **Humanização via Ollama:** LLM local (llama3.2, gemma2, phi3) com redução de até 50%
+- **Três Modos de Prioridade:** Balanceado, Redução Máxima ou Preservar Conteúdo
+- **Modo Triplo:** Operação Local (offline), Ollama (LLM local) ou API (Groq/Gemini)
+- **Técnicas Adversariais:** Remoção de marcadores de IA, paráfrase iterativa
+- **Avaliação de Naturalidade:** Score de fluência usando análise linguística
 - **Multi-formato:** Importa/exporta TXT, DOCX, MD, JSON
 - **Interface Moderna:** Tema escuro Dracula com feedback visual em tempo real
-- **Pacotes:** Disponivel como .deb e .flatpak
+- **Pacotes:** Disponível como .deb e .flatpak
 
 ---
 
@@ -73,13 +73,13 @@ cp .env.example .env
 
 1. Abra pelo menu de aplicativos ou execute `detectordedoppelganger`
 2. Cole texto na caixa esquerda ou importe arquivo
-3. Selecione modo de operacao (Local ou API)
-4. Ajuste parametros e clique em "Humanizar"
+3. Selecione modo de operação (Local ou API)
+4. Ajuste parâmetros e clique em "Humanizar"
 5. Exporte resultado via "Salvar Como..."
 
 ---
 
-### Desinstalacao
+### Desinstalação
 
 ```bash
 cd Detector-de-Doppelganger
@@ -88,14 +88,14 @@ cd Detector-de-Doppelganger
 
 ---
 
-### Stack Tecnica
+### Stack Técnica
 
 | Componente | Tecnologia |
 |------------|------------|
-| Deteccao (Local) | DistilBERT Multilingual (fine-tuned PT-BR) |
-| Humanizacao (Ollama) | llama3.2, gemma2, phi3 via Ollama |
-| Humanizacao (Local) | Adversarial + Marcadores IA |
-| Humanizacao (API) | Groq (llama-3.3-70b) / Gemini |
+| Detecção (Local) | DistilBERT Multilingual (fine-tuned PT-BR) |
+| Humanização (Ollama) | llama3.2, gemma2, phi3 via Ollama |
+| Humanização (Local) | Adversarial + Marcadores IA |
+| Humanização (API) | Groq (llama-3.3-70b) / Gemini |
 | Naturalidade | Lingua Language Detector |
 | Interface | CustomTkinter (tema Dracula) |
 | Testes | pytest + pytest-cov |
@@ -108,28 +108,28 @@ cd Detector-de-Doppelganger
 
 ```
 ├── main.py              # Orquestrador
-├── config.py            # Configuracoes centralizadas
+├── config.py            # Configurações centralizadas
 ├── pyproject.toml       # ruff + mypy + pytest
-├── requirements.txt     # Dependencias
+├── requirements.txt     # Dependências
 ├── src/
-│   ├── app/             # Bootstrap e inicializacao
+│   ├── app/             # Bootstrap e inicialização
 │   ├── core/            # Detector, Humanizador, Engine
 │   │   └── fine_tuning/ # Scripts de treinamento
-│   ├── ui/              # Interface grafica
+│   ├── ui/              # Interface gráfica
 │   ├── utils/           # Helpers
 │   ├── tests/           # Suite de testes (48 testes)
 │   └── logs/            # Logs rotacionados
 ├── models/              # Modelos treinados
 ├── assets/              # Recursos visuais
 ├── packaging/           # Scripts .deb e .flatpak
-└── docs/                # Documentacao e historico
+└── docs/                # Documentação e histórico
 ```
 
 ---
 
 ### Fine-Tuning (Opcional)
 
-Para retreinar o detector com seu proprio dataset:
+Para retreinar o detector com seu próprio dataset:
 
 ```bash
 # 1. Gerar dataset (requer GEMINI_API_KEY)
@@ -152,9 +152,9 @@ python -m src.core.fine_tuning.evaluate_model
 
 ---
 
-### Licenca
+### Licença
 
-[GPLv3](LICENSE) - Software livre, use e modifique a vontade.
+[GPLv3](LICENSE) - Software livre, use e modifique à vontade.
 
 ---
 
