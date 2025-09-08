@@ -1,3 +1,13 @@
+<div align="center">
+
+[![opensource](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](#)
+[![licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://www.gnu.org/licenses/gpl-3.0)
+[![compare](https://img.shields.io/github/commits-since/AndreBFarias/DetectorDeDoppelganger/latest/master)](https://github.com/AndreBFarias/DetectorDeDoppelganger/compare)
+[![Python](https://img.shields.io/badge/python-3.x-green.svg)](https://www.python.org/)
+[![Estrelas](https://img.shields.io/github/stars/AndreBFarias/DetectorDeDoppelganger.svg?style=social)](https://github.com/AndreBFarias/DetectorDeDoppelganger/stargazers)
+[![Contribuições](https://img.shields.io/badge/contribuições-bem--vindas-brightgreen.svg)](https://github.com/AndreBFarias/DetectorDeDoppelganger/issues)
+</div>
+
 # Detector de Doppelganger: Detector e Humanizador de Textos IA
 
 Ritual open source em Python pra detectar e humanizar textos de IA. Local, sem dependências externas além de Hugging Face.
