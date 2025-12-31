@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Detector de Doppelganger
+Comment=Detector e Humanizador de Texto IA
+Exec=detector-doppelganger
+Icon=com.github.andrebfarias.DetectorDoppelganger
+Type=Application
+Categories=Utility;TextTools;
+Terminal=false
+StartupNotify=true

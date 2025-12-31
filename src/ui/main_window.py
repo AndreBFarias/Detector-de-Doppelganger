@@ -126,28 +126,30 @@ class MainWindow(customtkinter.CTkFrame):
         self.left_menu.humanize_button.configure(text="Interromper")
 
         mode = self.left_menu.mode_menu.get()
-        use_api = "API" in mode
+        priority_map = {
+            "Balanceado": "balanced",
+            "Reducao Maxima": "max_reduction",
+            "Preservar Conteudo": "preserve_content",
+        }
+        priority = priority_map.get(self.left_menu.priority_menu.get(), "balanced")
 
-        if use_api:
-            self.processing_thread = ProcessingThreadV2(
-                text=text,
-                criatividade=self.left_menu.creativity_slider.get(),
-                intensidade=self.left_menu.intensity_slider.get(),
-                ui_queue=self.ui_queue,
-                style_key=self.left_menu.style_menu.get().lower(),
-                detector_mode="local",
-                humanizer_mode="api",
-            )
+        if "API" in mode:
+            humanizer_mode = "api"
+        elif "Ollama" in mode:
+            humanizer_mode = "ollama"
         else:
-            self.processing_thread = ProcessingThreadV2(
-                text=text,
-                criatividade=self.left_menu.creativity_slider.get(),
-                intensidade=self.left_menu.intensity_slider.get(),
-                ui_queue=self.ui_queue,
-                style_key=self.left_menu.style_menu.get().lower(),
-                detector_mode="local",
-                humanizer_mode="local",
-            )
+            humanizer_mode = "local"
+
+        self.processing_thread = ProcessingThreadV2(
+            text=text,
+            criatividade=self.left_menu.creativity_slider.get(),
+            intensidade=self.left_menu.intensity_slider.get(),
+            ui_queue=self.ui_queue,
+            style_key=self.left_menu.style_menu.get().lower(),
+            detector_mode="local",
+            humanizer_mode=humanizer_mode,
+            priority=priority,
+        )
         self.processing_thread.start()
 
     def _clear_output_area(self) -> None:

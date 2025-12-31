@@ -10,39 +10,27 @@ import config
 
 logger = logging.getLogger(__name__)
 
-HUMANIZER_PROMPT = """Voce e um especialista em reescrita de textos em portugues brasileiro.
-Sua tarefa: reescrever o texto abaixo de forma que pareca escrito por um humano nativo.
+HUMANIZER_PROMPT = """Edite o texto abaixo fazendo APENAS estas mudancas:
 
-REGRAS OBRIGATORIAS:
-1. MANTENHA TODO o significado e informacoes do texto original
-2. Use linguagem natural e coloquial brasileira
-3. Varie o comprimento das frases (curtas e longas misturadas)
-4. Evite estruturas muito formais ou padronizadas
-5. Adicione pequenas imperfeicoes naturais (hesitacoes, reformulacoes)
-6. Use conectivos variados (porem, entretanto, contudo, mas, so que)
-7. Evite repeticao de palavras - use sinonimos
-8. Inclua expressoes idiomaticas brasileiras quando apropriado
-9. Varie a estrutura das frases (nao comece todas da mesma forma)
-10. Faca parecer que alguem digitou isso naturalmente
+1. Escolha UMA frase e reordene as palavras (ex: "A IA transforma setores" -> "Setores sao transformados pela IA")
+2. Substitua UM adjetivo por outro equivalente
+3. Remova UM advérbio se houver (significativamente, extremamente, etc)
+4. Se houver lista com virgulas, mude a ordem dos itens
 
-PROIBIDO:
-- Inventar informacoes novas
-- Remover informacoes do original
-- Usar linguagem excessivamente formal
-- Manter estrutura identica ao original
+IMPORTANTE:
+- Mantenha 80% do texto EXATAMENTE igual
+- Nao adicione palavras novas
+- Nao mude o tom
+- Responda APENAS com o texto editado
 
-TEXTO ORIGINAL:
-{texto}
+TEXTO: {texto}
 
-TEXTO REESCRITO (apenas o texto, sem explicacoes):"""
+EDITADO:"""
 
 HUMANIZER_PROMPT_STYLE = {
-    "casual": """Reescreva de forma bem casual e descontraida, como se fosse uma conversa informal entre amigos.
-Use girias leves, contrações e expressões do dia a dia brasileiro.""",
-    "formal": """Reescreva mantendo um tom profissional mas natural.
-Use vocabulario adequado mas evite jargoes excessivos. Pareca um profissional experiente.""",
-    "academico": """Reescreva com rigor academico mas fluido.
-Mantenha precisao terminologica sem parecer robotico. Varie estruturas argumentativas.""",
+    "casual": """Tom: neutro e natural, como alguem digitando normalmente.""",
+    "formal": """Tom: profissional mas fluido, como um email de trabalho bem escrito.""",
+    "academico": """Tom: tecnico mas legivel, como um artigo bem redigido.""",
 }
 
 
