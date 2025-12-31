@@ -1,7 +1,7 @@
 # Auditoria Externa - Detector de Doppelganger
 
 **Data**: 2024-12-31
-**Auditor**: Luna (Agente de Engenharia)
+**Auditor**: Engenharia
 **Versao**: 1.0
 **Commit Base**: aab2fa6 (Versao-Estavel)
 
@@ -402,7 +402,7 @@ handler = RotatingFileHandler(
 Adicionar em arquivos principais:
 ```python
 # Detector de Doppelganger
-# Copyright (C) 2024 Andre Farias
+# Copyright (C) 2024 Contributors
 # License: GPLv3
 ```
 
@@ -460,7 +460,7 @@ Adicionar em arquivos principais:
 
 ---
 
-## 13. Conformidade com Protocolo Luna
+## 13. Conformidade com Protocolo de Qualidade
 
 | Requisito | Status | Observacao |
 |-----------|--------|------------|
@@ -524,7 +524,6 @@ Com as correcoes sugeridas, o projeto estara pronto para producao a longo prazo.
 **Assinatura**
 
 ```
-Luna - Engenheira de Dados
 Auditoria Externa v1.0
 2024-12-31
 ```

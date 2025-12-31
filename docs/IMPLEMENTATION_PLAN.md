@@ -1,6 +1,6 @@
 # Plano de Implementacao - Refatoracao Detector de Doppelganger
 
-**Modelo Base**: Projeto Luna
+**Modelo Base**: Protocolo de Qualidade
 **Objetivo**: Score 10/10 (100 pontos)
 **Data**: 2024-12-31
 
@@ -15,11 +15,11 @@
 | #03 | Criar config.py centralizado | P0 | Alto |
 | #04 | Implementar logging rotacionado | P0 | Critico |
 | #05 | Criar estrutura dev-journey/ | P1 | Alto |
-| #06 | Atualizar .gitignore padrao Luna | P1 | Medio |
+| #06 | Atualizar .gitignore padrao completo | P1 | Medio |
 | #07 | Implementar suite de testes | P0 | Critico |
 | #08 | Criar bootstrap.py | P1 | Alto |
 | #09 | Refatorar humanizador.py (remover global state) | P0 | Critico |
-| #10 | Atualizar install.sh padrao Luna | P1 | Medio |
+| #10 | Atualizar install.sh padrao completo | P1 | Medio |
 | #11 | Atualizar uninstall.sh | P1 | Baixo |
 | #12 | Criar run_tests.py colorido | P1 | Medio |
 | #13 | Atualizar README.md template visual | P2 | Medio |
@@ -48,7 +48,7 @@ Detector-de-Doppelganger/
 └── assets/
 ```
 
-### Estrutura Alvo (Padrao Luna)
+### Estrutura Alvo
 ```
 Detector-de-Doppelganger/
 ├── main.py                      # Renomear run.py
@@ -349,7 +349,7 @@ dev-journey/
 
 ---
 
-## Issue #06: Atualizar .gitignore Padrao Luna
+## Issue #06: Atualizar .gitignore Padrao Completo
 
 **Prioridade**: P1
 **Impacto**: Medio
@@ -612,7 +612,7 @@ def criar_humanizador(modelo: str) -> Humanizador:
 
 ---
 
-## Issue #10: Atualizar install.sh Padrao Luna
+## Issue #10: Atualizar install.sh Padrao Completo
 
 **Prioridade**: P1
 **Impacto**: Medio
@@ -814,7 +814,7 @@ ainda pensou sobre aquilo que todo mundo ve."* - Schopenhauer
 |---------|-------|------|
 | Score Total | 68/100 | 100/100 |
 | Testes | 0% | 80%+ |
-| Conformidade Luna | 38% | 95%+ |
+| Conformidade | 38% | 95%+ |
 | Type Hints | Parcial | 100% |
 | Logging Rotacionado | Nao | Sim |
 
@@ -823,7 +823,6 @@ ainda pensou sobre aquilo que todo mundo ve."* - Schopenhauer
 **Assinatura**
 
 ```
-Luna - Engenheira de Dados
 Plano de Implementacao v1.0
 2024-12-31
 ```
