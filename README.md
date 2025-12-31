@@ -17,7 +17,7 @@
 
 ### Descricao
 
-Aplicacao desktop para Linux que detecta e humaniza textos gerados por IA. Arquitetura dual com modos offline (modelos locais) e API (Groq/Gemini). Detector fine-tuned para PT-BR com 100% de acuracia no conjunto de teste.
+**v1.0** - Aplicacao desktop para Linux que detecta e humaniza textos gerados por IA. Suporta tres modos de operacao: Local (offline), Ollama (LLM local) e API (Groq/Gemini). Detector fine-tuned para PT-BR com alta acuracia. **Novo: Reducao de score de IA de ate 50% via Ollama.**
 
 ---
 
@@ -30,12 +30,14 @@ Aplicacao desktop para Linux que detecta e humaniza textos gerados por IA. Arqui
 ### Funcionalidades
 
 - **Deteccao de IA:** Modelo fine-tuned para portugues brasileiro (distilbert-multilingual)
-- **Humanizacao Multinivel:** Tres niveis de processamento (Leve, Equilibrado, Profundo)
-- **Modo Dual:** Operacao offline (local) ou via API (Groq/Gemini)
-- **Tecnicas Adversariais:** Substituicao de sinonimos, variacao de estrutura, perturbacao de entropia
+- **Humanizacao via Ollama:** LLM local (llama3.2, gemma2, phi3) com reducao de ate 50%
+- **Tres Modos de Prioridade:** Balanceado, Reducao Maxima ou Preservar Conteudo
+- **Modo Triplo:** Operacao Local (offline), Ollama (LLM local) ou API (Groq/Gemini)
+- **Tecnicas Adversariais:** Remocao de marcadores de IA, parafrase iterativa
 - **Avaliacao de Naturalidade:** Score de fluencia usando analise linguistica
 - **Multi-formato:** Importa/exporta TXT, DOCX, MD, JSON
 - **Interface Moderna:** Tema escuro Dracula com feedback visual em tempo real
+- **Pacotes:** Disponivel como .deb e .flatpak
 
 ---
 
@@ -91,13 +93,14 @@ cd Detector-de-Doppelganger
 | Componente | Tecnologia |
 |------------|------------|
 | Deteccao (Local) | DistilBERT Multilingual (fine-tuned PT-BR) |
-| Deteccao (API) | Groq / Gemini |
-| Humanizacao (Local) | T5-PTT5 (Unicamp) + Adversarial |
+| Humanizacao (Ollama) | llama3.2, gemma2, phi3 via Ollama |
+| Humanizacao (Local) | Adversarial + Marcadores IA |
 | Humanizacao (API) | Groq (llama-3.3-70b) / Gemini |
 | Naturalidade | Lingua Language Detector |
-| Interface | CustomTkinter |
+| Interface | CustomTkinter (tema Dracula) |
 | Testes | pytest + pytest-cov |
 | Qualidade | ruff + mypy + pre-commit |
+| Pacotes | .deb + .flatpak |
 
 ---
 
@@ -117,10 +120,9 @@ cd Detector-de-Doppelganger
 │   ├── tests/           # Suite de testes (48 testes)
 │   └── logs/            # Logs rotacionados
 ├── models/              # Modelos treinados
-├── data/                # Datasets de fine-tuning
 ├── assets/              # Recursos visuais
-├── docs/                # Documentacao tecnica
-└── dev-journey/         # Historico de desenvolvimento
+├── packaging/           # Scripts .deb e .flatpak
+└── docs/                # Documentacao e historico
 ```
 
 ---

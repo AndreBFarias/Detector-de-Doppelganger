@@ -24,6 +24,7 @@ class ProcessingThreadV2(threading.Thread):
         style_key: str = "casual",
         detector_mode: str = "local",
         humanizer_mode: str = "local",
+        priority: str = "balanced",
     ) -> None:
         super().__init__(daemon=True)
         self.text_original = text
@@ -33,6 +34,7 @@ class ProcessingThreadV2(threading.Thread):
         self.style_key = style_key
         self.detector_mode = detector_mode
         self.humanizer_mode = humanizer_mode
+        self.priority = priority
         self.stop_event = threading.Event()
 
         self.engine: DoppelgangerEngine | None = None
@@ -83,6 +85,9 @@ class ProcessingThreadV2(threading.Thread):
             raise RuntimeError("Engine nao inicializado")
 
         from src.core.engine import IterationResult, ProcessResult
+
+        if self.humanizer_mode == "ollama":
+            return self._process_ollama()
 
         score_inicial, _ = self.engine.detect(self.text_original)
 
@@ -166,6 +171,64 @@ class ProcessingThreadV2(threading.Thread):
             iteracoes=iteracoes,
             sucesso=sucesso,
             mensagem=f"Score: {score_inicial:.2%} -> {melhor_score:.2%} ({len(iteracoes)} iteracoes)",
+        )
+
+    def _process_ollama(self):
+        from src.core.engine import IterationResult, ProcessResult
+        from src.core.paraphrase_engine import get_ollama_engine
+
+        ollama = get_ollama_engine()
+
+        if not ollama.is_available():
+            self.emit_status("Ollama indisponivel, usando modo local...")
+            self.humanizer_mode = "local"
+            return self._process_with_progress()
+
+        score_inicial, _ = self.engine.detect(self.text_original)
+
+        if score_inicial < self.engine.target_score:
+            self.emit_progress_update(1.0, self.text_original)
+            return ProcessResult(
+                texto_original=self.text_original,
+                texto_final=self.text_original,
+                score_inicial=score_inicial,
+                score_final=score_inicial,
+                iteracoes=[],
+                sucesso=True,
+                mensagem=f"Texto ja possui score baixo: {score_inicial:.2%}",
+            )
+
+        self.emit_status(f"Humanizando via Ollama ({self.priority})...")
+
+        texto_final, score_final, stats = ollama.aggressive_humanize(
+            self.text_original,
+            self.engine.detect,
+            target_reduction=0.5,
+            priority=self.priority,
+        )
+
+        self.emit_progress_update(1.0, texto_final)
+
+        iteracoes = [
+            IterationResult(
+                texto=texto_final,
+                score_ia=score_final,
+                label=f"Ollama ({stats.get('attempts', 0)} tentativas)",
+                iteracao=1,
+            )
+        ]
+
+        sucesso = score_final < score_inicial * 0.8
+        reducao = (score_inicial - score_final) / score_inicial * 100
+
+        return ProcessResult(
+            texto_original=self.text_original,
+            texto_final=texto_final,
+            score_inicial=score_inicial,
+            score_final=score_final,
+            iteracoes=iteracoes,
+            sucesso=sucesso,
+            mensagem=f"Score: {score_inicial:.1%} -> {score_final:.1%} (reducao: {reducao:.1f}%)",
         )
 
     def _on_progress(self, message: str, progress: float) -> None:

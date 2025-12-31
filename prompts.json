@@ -25,7 +25,7 @@
   },
   "formal": {
     "style": "formal",
-    "example": "Prezado colega, informo que o relatório foi finalizado e está disponível no repositório. Solicito sua revisão até sexta-feira. Atenciosamente, André.",
+    "example": "Prezado colega, informo que o relatório foi finalizado e está disponível no repositório. Solicito sua revisão até sexta-feira.",
     "description": "Tom profissional, mas não rígido. Ideal para e-mails formais, relatórios ou comunicações com stakeholders.",
     "tone": "respeitoso, claro, profissional",
     "max_length": 500,
