@@ -113,10 +113,7 @@ class ProcessingThreadV2(threading.Thread):
 
             texto_humanizado = self.engine.humanize(texto_atual, self.style_key)
 
-            self.emit_progress_update(
-                (i + 0.7) / self.engine.max_iterations,
-                texto_humanizado if i == 0 else ""
-            )
+            self.emit_progress_update((i + 0.7) / self.engine.max_iterations, texto_humanizado if i == 0 else "")
 
             novo_score, novo_label = self.engine.detect(texto_humanizado)
 

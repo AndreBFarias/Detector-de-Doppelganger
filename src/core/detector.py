@@ -24,14 +24,14 @@ def detectar_ia(texto, detector_pipeline):
 
         # A saída padrão do 'openai-detector' é 'Real' (LABEL_0) ou 'Fake' (LABEL_1)
         for resultado in resultados:
-            if resultado['label'] == 'Real' or resultado['label'] == 'LABEL_0':
+            if resultado["label"] == "Real" or resultado["label"] == "LABEL_0":
                 # Score é a confiança no 'Real'. Invertemos para obter a prob. de IA.
-                prob_ia = 1.0 - resultado['score']
+                prob_ia = 1.0 - resultado["score"]
                 label = f"Humano ({100 - prob_ia*100:.1f}%)"
                 return prob_ia, label
-            elif resultado['label'] == 'Fake' or resultado['label'] == 'LABEL_1':
+            elif resultado["label"] == "Fake" or resultado["label"] == "LABEL_1":
                 # Score é a confiança no 'Fake' (IA).
-                prob_ia = resultado['score']
+                prob_ia = resultado["score"]
                 label = f"IA ({prob_ia*100:.1f}%)"
                 return prob_ia, label
 

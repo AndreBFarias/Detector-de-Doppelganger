@@ -97,7 +97,7 @@ def humanizar_texto(
     device: str = "cpu",
     prompt_info: dict | None = None,
     num_beams: int = 5,
-    temperature: float = 0.9
+    temperature: float = 0.9,
 ) -> str:
     if not texto.strip():
         logging.warning("humanizar_texto chamado com texto vazio.")
@@ -121,7 +121,9 @@ def humanizar_texto(
         max_len = max(50, int(input_length * max_length_mult))
         min_len = max(20, int(input_length * min_length_mult))
 
-        logging.info(f"Gerando texto humanizado (PTT5). Input_len: {input_length}, Min_len: {min_len}, Max_len: {max_len}")
+        logging.info(
+            f"Gerando texto humanizado (PTT5). Input_len: {input_length}, Min_len: {min_len}, Max_len: {max_len}"
+        )
 
         outputs = model.generate(
             **inputs,
@@ -133,7 +135,7 @@ def humanizar_texto(
             top_k=50,
             top_p=0.95,
             no_repeat_ngram_size=3,
-            repetition_penalty=1.2
+            repetition_penalty=1.2,
         )
 
         texto_humanizado = tokenizer.decode(outputs[0], skip_special_tokens=True)

@@ -54,6 +54,7 @@ class DetectorAPI:
 
         try:
             from groq import Groq
+
             self._client = Groq(api_key=config.GROQ_API_KEY)
             logger.info("Cliente Groq inicializado com sucesso.")
         except ImportError:
@@ -68,6 +69,7 @@ class DetectorAPI:
 
         try:
             import google.generativeai as genai
+
             genai.configure(api_key=config.GEMINI_API_KEY)
             self._client = genai.GenerativeModel(config.GEMINI_MODEL)
             logger.info("Cliente Gemini inicializado com sucesso.")

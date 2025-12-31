@@ -12,7 +12,19 @@ from src.core.humanizador import humanizar_texto
 from src.core.naturalness_evaluator import avaliar_naturalidade
 
 
-def reprocessar_texto(texto_original, tokenizer, model, detector, evaluator, num_beams, temperature, progress_callback, stop_event, threshold_improvement=0.60, prompt_info=None):
+def reprocessar_texto(
+    texto_original,
+    tokenizer,
+    model,
+    detector,
+    evaluator,
+    num_beams,
+    temperature,
+    progress_callback,
+    stop_event,
+    threshold_improvement=0.60,
+    prompt_info=None,
+):
     prob_original, _ = detectar_ia(texto_original, detector)
     max_iterations = 3
     current_text = texto_original
@@ -20,7 +32,7 @@ def reprocessar_texto(texto_original, tokenizer, model, detector, evaluator, num
 
     best_text = texto_original
     best_prob = prob_original
-    best_naturalness = 0.0 # Inicializa
+    best_naturalness = 0.0  # Inicializa
 
     # Avaliação inicial de naturalidade para baseline
     best_naturalness = avaliar_naturalidade(texto_original, evaluator)
@@ -32,7 +44,7 @@ def reprocessar_texto(texto_original, tokenizer, model, detector, evaluator, num
         logging.info(f"Iniciando iteração {iteration + 1} de {max_iterations}...")
 
         # Quebra o texto em frases para processamento incremental
-        frases = re.split(r'(?<=[.!?])\s+', current_text.strip())
+        frases = re.split(r"(?<=[.!?])\s+", current_text.strip())
         logging.debug(f"Texto quebrado em {len(frases)} frases: {frases}")
 
         texto_final_completo = ""
@@ -46,7 +58,9 @@ def reprocessar_texto(texto_original, tokenizer, model, detector, evaluator, num
                 continue
 
             # Humaniza a frase e a anexa ao resultado
-            frase_humanizada = humanizar_texto(frase, model, tokenizer, num_beams=num_beams, temperature=temperature, prompt_info=prompt_info)
+            frase_humanizada = humanizar_texto(
+                frase, model, tokenizer, num_beams=num_beams, temperature=temperature, prompt_info=prompt_info
+            )
             texto_final_completo += frase_humanizada + " "
 
             # Emite o progresso de forma incremental (ajustado para iterações)
@@ -62,15 +76,19 @@ def reprocessar_texto(texto_original, tokenizer, model, detector, evaluator, num
         prob_final, _ = detectar_ia(texto_final_completo, detector)
         naturalidade_final = avaliar_naturalidade(texto_final_completo, evaluator)
 
-        logging.info(f"Iteração {iteration + 1} concluída. Prob IA: {prob_final:.2f}, Naturalidade: {naturalidade_final:.2f}")
+        logging.info(
+            f"Iteração {iteration + 1} concluída. Prob IA: {prob_final:.2f}, Naturalidade: {naturalidade_final:.2f}"
+        )
 
         # Verifica se houve melhora em relação à iteração ANTERIOR (ou original na primeira)
         # Se a probabilidade de IA aumentou significativamente, degradou.
         # Usa uma tolerância (epsilon) para evitar paradas por flutuações minúsculas
         epsilon = 0.001
         if prob_final > (current_prob + epsilon):
-             logging.warning(f"A humanização degradou o score (Atual: {prob_final:.2f} > Anterior: {current_prob:.2f}). Revertendo para o melhor resultado.")
-             break # Para o loop, mantendo o best_text atualizado até agora
+            logging.warning(
+                f"A humanização degradou o score (Atual: {prob_final:.2f} > Anterior: {current_prob:.2f}). Revertendo para o melhor resultado."
+            )
+            break  # Para o loop, mantendo o best_text atualizado até agora
 
         # Se melhorou ou manteve, atualiza o atual e verifica se é o melhor global
         current_text = texto_final_completo

@@ -183,12 +183,12 @@ class MainWindow(customtkinter.CTkFrame):
             self.text_input.ia_label_value.configure(
                 text=f"{message['prob_ia']*100:.2f}%",
                 text_color=color_ia,
-                font=customtkinter.CTkFont(size=16, weight="bold")
+                font=customtkinter.CTkFont(size=16, weight="bold"),
             )
             self.text_input.nat_label_value.configure(
                 text=f"{message['naturalidade']*100:.2f}%",
                 text_color=color_nat,
-                font=customtkinter.CTkFont(size=16, weight="bold")
+                font=customtkinter.CTkFont(size=16, weight="bold"),
             )
 
         elif msg_type == "progress":
@@ -205,12 +205,12 @@ class MainWindow(customtkinter.CTkFrame):
             self.text_output.ia_label_value.configure(
                 text=f"{message['prob_ia']*100:.2f}%",
                 text_color=color_ia,
-                font=customtkinter.CTkFont(size=16, weight="bold")
+                font=customtkinter.CTkFont(size=16, weight="bold"),
             )
             self.text_output.nat_label_value.configure(
                 text=f"{message['naturalidade']*100:.2f}%",
                 text_color=color_nat,
-                font=customtkinter.CTkFont(size=16, weight="bold")
+                font=customtkinter.CTkFont(size=16, weight="bold"),
             )
 
         elif msg_type == "finished":
@@ -218,15 +218,14 @@ class MainWindow(customtkinter.CTkFrame):
             self.left_menu.progress_bar.set(0)
 
     def select_file(self) -> None:
-        filepath = filedialog.askopenfilename(
-            filetypes=[("Text/Doc Files", "*.txt *.docx *.md"), ("All files", "*.*")]
-        )
+        filepath = filedialog.askopenfilename(filetypes=[("Text/Doc Files", "*.txt *.docx *.md"), ("All files", "*.*")])
         if not filepath:
             return
 
         try:
             if filepath.endswith(".docx"):
                 import docx
+
                 doc = docx.Document(filepath)
                 full_text = "\n".join([para.text for para in doc.paragraphs])
                 self.text_input.textbox.delete("1.0", "end")
@@ -268,8 +267,8 @@ class MainWindow(customtkinter.CTkFrame):
                 ("Documento Word", "*.docx"),
                 ("Markdown", "*.md"),
                 ("JSON", "*.json"),
-                ("Todos os arquivos", "*.*")
-            ]
+                ("Todos os arquivos", "*.*"),
+            ],
         )
         if not filepath:
             return

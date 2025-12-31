@@ -37,6 +37,7 @@ def uninstall():
     logging.info("Desinstalação concluída.")
     print("Desinstalado com sucesso.")
 
+
 if __name__ == "__main__":
     uninstall()
 

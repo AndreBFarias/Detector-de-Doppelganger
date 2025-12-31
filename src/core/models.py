@@ -23,7 +23,7 @@ def load_model_and_tokenizer(
     tokenizer_class: Any,
     device: torch.device,
     hf_home: str,
-    task_name: str = "Modelo"
+    task_name: str = "Modelo",
 ) -> tuple[Any, Any]:
     logger.info(f"Iniciando carregamento: {task_name} ({model_name_or_path})")
     try:
@@ -75,31 +75,31 @@ class ModelLoader:
                     "name": "Detector",
                     "path": config.DETECTOR_MODEL,
                     "model_class": AutoModelForSequenceClassification,
-                    "tokenizer_class": AutoTokenizer
+                    "tokenizer_class": AutoTokenizer,
                 },
                 {
                     "name": "Humanizador Leve",
                     "path": config.HUMANIZADOR_LEVE,
                     "model_class": T5ForConditionalGeneration,
-                    "tokenizer_class": AutoTokenizer
+                    "tokenizer_class": AutoTokenizer,
                 },
                 {
                     "name": "Humanizador Equilibrado",
                     "path": config.HUMANIZADOR_EQUILIBRADO,
                     "model_class": T5ForConditionalGeneration,
-                    "tokenizer_class": AutoTokenizer
+                    "tokenizer_class": AutoTokenizer,
                 },
                 {
                     "name": "Humanizador Profundo",
                     "path": config.HUMANIZADOR_PROFUNDO,
                     "model_class": T5ForConditionalGeneration,
-                    "tokenizer_class": AutoTokenizer
+                    "tokenizer_class": AutoTokenizer,
                 },
                 {
                     "name": "Avaliador de Alucinacao",
                     "path": config.HALLUCINATION_EVALUATION_MODEL,
                     "model_class": AutoModelForSequenceClassification,
-                    "tokenizer_class": AutoTokenizer
+                    "tokenizer_class": AutoTokenizer,
                 },
             ]
 
@@ -115,7 +115,7 @@ class ModelLoader:
                     tokenizer_class=model_info["tokenizer_class"],
                     device=self.device,
                     hf_home=self.hf_home,
-                    task_name=str(model_info["name"])
+                    task_name=str(model_info["name"]),
                 )
 
             self._report_status("Todos os modelos carregados.", 1.0)

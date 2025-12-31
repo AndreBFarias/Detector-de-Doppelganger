@@ -10,15 +10,17 @@ def avaliar_naturalidade(texto: str, avaliador: Any) -> float:
     try:
         resultado = avaliador(texto[:512])[0]
 
-        label = resultado['label']
-        score = resultado['score']
+        label = resultado["label"]
+        score = resultado["score"]
 
-        if label == 'Real' or label == 'LABEL_0':
+        if label == "Real" or label == "LABEL_0":
             naturalidade = score
         else:
             naturalidade = 1.0 - score
 
-        logging.info(f"Avaliação de naturalidade concluída. Label: {label}, Score Original: {score:.4f}, Naturalidade Calc: {naturalidade:.4f}")
+        logging.info(
+            f"Avaliação de naturalidade concluída. Label: {label}, Score Original: {score:.4f}, Naturalidade Calc: {naturalidade:.4f}"
+        )
         return naturalidade
 
     except Exception as e:

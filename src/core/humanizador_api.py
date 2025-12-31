@@ -39,10 +39,8 @@ TEXTO REESCRITO (apenas o texto, sem explicacoes):"""
 HUMANIZER_PROMPT_STYLE = {
     "casual": """Reescreva de forma bem casual e descontraida, como se fosse uma conversa informal entre amigos.
 Use girias leves, contrações e expressões do dia a dia brasileiro.""",
-
     "formal": """Reescreva mantendo um tom profissional mas natural.
 Use vocabulario adequado mas evite jargoes excessivos. Pareca um profissional experiente.""",
-
     "academico": """Reescreva com rigor academico mas fluido.
 Mantenha precisao terminologica sem parecer robotico. Varie estruturas argumentativas.""",
 }
@@ -69,6 +67,7 @@ class HumanizerAPI:
 
         try:
             from groq import Groq
+
             self._client = Groq(api_key=config.GROQ_API_KEY)
             logger.info("Cliente Groq inicializado para humanizacao.")
         except ImportError:
@@ -83,6 +82,7 @@ class HumanizerAPI:
 
         try:
             import google.generativeai as genai
+
             genai.configure(api_key=config.GEMINI_API_KEY)
             self._client = genai.GenerativeModel(config.GEMINI_MODEL)
             logger.info("Cliente Gemini inicializado para humanizacao.")
@@ -121,7 +121,7 @@ class HumanizerAPI:
             messages=[
                 {
                     "role": "system",
-                    "content": "Voce e um especialista em reescrita de textos. Responda APENAS com o texto reescrito, sem explicacoes ou comentarios adicionais."
+                    "content": "Voce e um especialista em reescrita de textos. Responda APENAS com o texto reescrito, sem explicacoes ou comentarios adicionais.",
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -150,7 +150,7 @@ class HumanizerAPI:
 
         for prefix in prefixes_to_remove:
             if content.lower().startswith(prefix.lower()):
-                content = content[len(prefix):].strip()
+                content = content[len(prefix) :].strip()
 
         if content.startswith('"') and content.endswith('"'):
             content = content[1:-1]

@@ -125,10 +125,7 @@ class DetectorTrainer:
             with open(test_path, encoding="utf-8") as f:
                 test_data = json.load(f)
 
-            logger.info(
-                f"Dataset carregado: train={len(train_data)}, "
-                f"val={len(val_data)}, test={len(test_data)}"
-            )
+            logger.info(f"Dataset carregado: train={len(train_data)}, " f"val={len(val_data)}, test={len(test_data)}")
 
             return train_data, val_data, test_data
 
