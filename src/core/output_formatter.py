@@ -1,30 +1,26 @@
-# 56
-import os
+from __future__ import annotations
+
 import json
 import logging
+import os
+from typing import Any
 
-def save_output(text, filename, style="default"):
-    """
-    Salva o texto no formato especificado, aplicando um estilo.
-    """
+
+def save_output(text: str, filename: str, style: str = "default") -> None:
+    Document: Any = None
     try:
-        # 56
-        # Tenta importar docx apenas quando necessário
         from docx import Document
     except ImportError:
-        Document = None
+        pass
 
-    # 56
     base, ext = os.path.splitext(filename)
-    
+
     if ext == ".txt":
-        # 57
         with open(filename, "w", encoding="utf-8") as f:
             f.write(text)
 
     elif ext == ".docx":
-        # 58
-        if not Document:
+        if Document is None:
             raise ImportError("A biblioteca 'python-docx' é necessária para salvar em .docx. Instale com 'pip install python-docx'")
         doc = Document()
         if style == "bullets":
@@ -36,7 +32,6 @@ def save_output(text, filename, style="default"):
         doc.save(filename)
 
     elif ext == ".md":
-        # 59
         with open(filename, "w", encoding="utf-8") as f:
             if style == "bullets":
                 for line in text.split("\n"):
@@ -46,17 +41,16 @@ def save_output(text, filename, style="default"):
                 f.write(text)
 
     elif ext == ".json":
-        # 60
         output_data = {"style": style, "content": text}
         with open(filename, "w", encoding="utf-8") as f:
             json.dump(output_data, f, ensure_ascii=False, indent=4)
 
     else:
-        # 60
-        # Fallback para qualquer outra extensão é salvar como texto puro
         logging.warning(f"Formato '{ext}' não suportado diretamente. Salvando como texto puro.")
         with open(filename, "w", encoding="utf-8") as f:
             f.write(text)
-            
-    # 60
+
     logging.info(f"Arquivo salvo em '{filename}' com o estilo '{style}'.")
+
+
+# "A pena e mais poderosa que a espada." - Edward Bulwer-Lytton

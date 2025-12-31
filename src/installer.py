@@ -1,10 +1,11 @@
 # installer.py - Ritual de Magia Negra Digital: "Invocação do Ícone Eterno"
 # Instala o programa no sistema, selando sua presença com .desktop e ícones.
 
+import logging
 import os
 import shutil
 import stat
-import logging
+
 
 def install():
     """
