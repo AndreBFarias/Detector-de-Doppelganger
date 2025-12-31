@@ -2,7 +2,7 @@
 
 ## Objetivos da Sessão
 
-Continuação da refatoração do projeto seguindo o padrão Luna para alcançar score 10/10.
+Continuacao da refatoracao do projeto seguindo o padrao de qualidade para alcancar score 10/10.
 
 ## Tarefas Concluídas
 
@@ -13,7 +13,7 @@ Continuação da refatoração do projeto seguindo o padrão Luna para alcançar
 - Line-length: 120 caracteres
 
 ### 2. README.md Atualizado
-- Template visual padrão Luna aplicado
+- Template visual padrao aplicado
 - Badges corrigidos (nome do repositório)
 - Imagens com caminhos relativos (assets/icon.png, assets/interface.png)
 - Seções: Descrição, Funcionalidades, Instalação, Uso, Stack Técnica, Arquitetura
@@ -202,7 +202,7 @@ main.py             # Entry point (orquestrador)
 .pre-commit-config.yaml  # Hooks de qualidade
 prompts.json        # Estilos de humanização
 pyproject.toml      # ruff + mypy + pytest
-README.md           # Template visual Luna
+README.md           # Template visual
 requirements.txt    # Dependências
 run_tests.py        # Test runner colorido
 uninstall.sh        # Desinstalador
