@@ -20,6 +20,7 @@ Pillow
 python-dotenv
 python-docx
 lingua-language-detector
+requests
 
 # ==== OPTIONAL (quantization) ====
 bitsandbytes
@@ -32,3 +33,4 @@ pytest-cov
 pre-commit
 ruff
 mypy
+types-requests
