@@ -2,7 +2,7 @@
 
 **Data de Avaliacao**: 2024-12-31
 **Versao Avaliada**: aab2fa6 (Versao-Estavel)
-**Avaliador**: Luna (Agente de Engenharia)
+**Avaliador**: Engenharia
 
 ---
 
@@ -155,7 +155,7 @@ UI/UX                 │              │       ███████│
 
 ---
 
-## Comparativo com Protocolo Luna
+## Comparativo com Protocolo de Qualidade
 
 | Requisito | Peso | Cumprido | Pontos |
 |-----------|------|----------|--------|
@@ -170,7 +170,7 @@ UI/UX                 │              │       ███████│
 | QOL checkpoint | 3 | Nao | 0 |
 | Citacao final | 2 | Nao | 0 |
 
-**Conformidade Luna**: 22/58 = **38%**
+**Conformidade**: 22/58 = **38%**
 
 ---
 
@@ -267,7 +267,7 @@ O **Detector de Doppelganger** atinge nota **B (68/100)** - um projeto funcional
 **Pontos fracos**:
 - Ausencia total de testes (critico)
 - Logging sem rotacao
-- Conformidade parcial com Protocolo Luna
+- Conformidade parcial com Protocolo de Qualidade
 
 **Veredicto**: Recomendado para uso pessoal. Nao recomendado para producao enterprise ate implementacao de testes.
 
@@ -285,7 +285,6 @@ O **Detector de Doppelganger** atinge nota **B (68/100)** - um projeto funcional
 **Assinatura**
 
 ```
-Luna - Engenheira de Dados
 Scorecard v1.0
 2024-12-31
 ```

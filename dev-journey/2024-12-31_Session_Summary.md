@@ -8,7 +8,7 @@ Primeira sessao de refatoracao documentada.
 ## Esta Sessao
 
 ### Objetivo
-Refatorar o projeto Detector de Doppelganger seguindo o modelo do projeto Luna para atingir score 10/10.
+Refatorar o projeto Detector de Doppelganger seguindo o padrao de qualidade para atingir score 10/10.
 
 ### Etapas Completadas
 

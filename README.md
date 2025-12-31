@@ -157,5 +157,5 @@ python -m src.core.fine_tuning.evaluate_model
 ---
 
 <div align="center">
-<sub>Desenvolvido por Andre Farias</sub>
+<sub>Projeto Open Source</sub>
 </div>
