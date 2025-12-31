@@ -82,14 +82,16 @@ def evaluate_dataset() -> dict[str, float]:
             if is_correct:
                 correct_ai += 1
 
-        results.append({
-            "text": text[:60] + "..." if len(text) > 60 else text,
-            "true": "IA" if true_label == 1 else "Humano",
-            "pred": "IA" if predicted_label == 1 else "Humano",
-            "ai_prob": f"{ai_prob * 100:.1f}%",
-            "correct": is_correct,
-            "source": source,
-        })
+        results.append(
+            {
+                "text": text[:60] + "..." if len(text) > 60 else text,
+                "true": "IA" if true_label == 1 else "Humano",
+                "pred": "IA" if predicted_label == 1 else "Humano",
+                "ai_prob": f"{ai_prob * 100:.1f}%",
+                "correct": is_correct,
+                "source": source,
+            }
+        )
 
     logger.info("\n" + "=" * 60)
     logger.info("RESULTADOS DA AVALIACAO")
