@@ -1,23 +1,23 @@
-import tkinter
-import customtkinter
-from tkinter import filedialog
 import logging
+import tkinter
+from tkinter import filedialog
+
 
 class ContextMenu:
     def __init__(self, textbox, save_callback=None):
         self.textbox = textbox
         self.save_callback = save_callback
         self.menu = tkinter.Menu(
-            textbox, 
-            tearoff=0, 
-            bg="#181825", 
-            fg="white", 
-            activebackground="#50FA7B", 
+            textbox,
+            tearoff=0,
+            bg="#181825",
+            fg="white",
+            activebackground="#50FA7B",
             activeforeground="#181825",
             bd=0,
             relief="flat"
         )
-        
+
         # Definir opções do menu
         self.menu.add_command(label="Selecionar Tudo", command=self.select_all)
         self.menu.add_separator()
@@ -25,7 +25,7 @@ class ContextMenu:
         self.menu.add_command(label="Colar", command=self.paste)
         self.menu.add_command(label="Recortar", command=self.cut)
         self.menu.add_command(label="Apagar", command=self.delete)
-        
+
         if self.save_callback:
             self.menu.add_separator()
             self.menu.add_command(label="Salvar Como...", command=self.save_as)
@@ -36,17 +36,17 @@ class ContextMenu:
 
         # Bindings do Mouse (Botão Direito)
         self.textbox.bind("<Button-3>", self.show_menu)
-        
+
         # Bindings de Teclado
         # Nota: CTkTextbox já lida com Ctrl+C, V, X, Del nativamente via tk.Text subjacente.
         # Precisamos adicionar Ctrl+A e Ctrl+S.
         # Adicionando múltiplas variantes para garantir compatibilidade
         for key in ["<Control-a>", "<Control-A>", "<Control-Key-a>", "<Control-Key-A>"]:
             self.textbox.bind(key, self.select_all)
-            
+
         for key in ["<Control-s>", "<Control-S>", "<Control-Key-s>", "<Control-Key-S>"]:
             self.textbox.bind(key, self.save_as)
-        
+
         # Removido binding de FocusOut que causava fechamento indesejado
 
     def show_menu(self, event):
@@ -99,7 +99,7 @@ class ContextMenu:
             if not text.strip():
                 logging.warning("Texto vazio, não salvando.")
                 return "break"
-            
+
             filename = filedialog.asksaveasfilename(
                 defaultextension=".txt",
                 filetypes=[("Arquivos de Texto", "*.txt"), ("Todos os Arquivos", "*.*")]

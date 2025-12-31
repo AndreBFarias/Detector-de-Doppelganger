@@ -1,61 +1,65 @@
 #!/bin/bash
-# Ritual de Magia Negra Digital: "Exorcismo do Portal"
-# Remove o Detector de Doppelgänger, apagando seus rastros do sistema.
-
 set -e
 
-# 76
-# --- Variáveis de Configuração ---
-APP_NAME="DetectorDeDoppelganger"
-APP_NAME_LOWER="detectordedoppelganger"
-INSTALL_DIR="/opt/$APP_NAME"
-EXECUTABLE="/usr/local/bin/$APP_NAME_LOWER"
-DESKTOP_FILE="/usr/share/applications/$APP_NAME_LOWER.desktop"
+APP_NAME="detector-doppelganger"
+APP_DISPLAY_NAME="Detector de Doppelganger"
 
-# 77
-echo "--- Iniciando Desinstalação do $APP_NAME ---"
+DESKTOP_ENTRY_DIR_USER="${HOME}/.local/share/applications"
+ICON_DIR_USER="${HOME}/.local/share/icons/hicolor"
+DESKTOP_ENTRY_DIR_SYSTEM="/usr/local/share/applications"
+ICON_DIR_SYSTEM="/usr/local/share/icons/hicolor"
 
-# 78
-# --- Remoção de Arquivos (com sudo) ---
-echo "[1/4] Removendo diretório de instalação $INSTALL_DIR..."
-if [ -d "$INSTALL_DIR" ]; then
-    sudo rm -rf "$INSTALL_DIR"
-else
-    echo "Diretório $INSTALL_DIR não encontrado. Pulando."
+echo "=== Iniciando Desinstalação do ${APP_DISPLAY_NAME} ==="
+
+remove_file() {
+    local file="$1"
+    local sudo_cmd="$2"
+    if [ -f "$file" ]; then
+        $sudo_cmd rm "$file"
+        echo "Removido: $file"
+    fi
+}
+
+remove_dir() {
+    local dir="$1"
+    local sudo_cmd="$2"
+    if [ -d "$dir" ]; then
+        $sudo_cmd rm -rf "$dir"
+        echo "Removido: $dir"
+    fi
+}
+
+echo "[1/3] Removendo atalho do usuário..."
+remove_file "${DESKTOP_ENTRY_DIR_USER}/${APP_NAME}.desktop" ""
+
+echo "[2/3] Removendo ícones do usuário..."
+for size in 16 32 64 128 256; do
+    remove_file "${ICON_DIR_USER}/${size}x${size}/apps/${APP_NAME}.png" ""
+done
+
+echo "[3/3] Removendo instalação do sistema (se existir)..."
+if [ -f "${DESKTOP_ENTRY_DIR_SYSTEM}/${APP_NAME}.desktop" ]; then
+    sudo rm "${DESKTOP_ENTRY_DIR_SYSTEM}/${APP_NAME}.desktop"
+    echo "Removido: ${DESKTOP_ENTRY_DIR_SYSTEM}/${APP_NAME}.desktop"
 fi
 
-# 79
-echo "[2/4] Removendo executável $EXECUTABLE..."
-if [ -f "$EXECUTABLE" ]; then
-    sudo rm "$EXECUTABLE"
-else
-    echo "Executável $EXECUTABLE não encontrado. Pulando."
-fi
-
-# 79
-echo "[3/4] Removendo entrada .desktop $DESKTOP_FILE..."
-if [ -f "$DESKTOP_FILE" ]; then
-    sudo rm "$DESKTOP_FILE"
-else
-    echo "Entrada .desktop $DESKTOP_FILE não encontrada. Pulando."
-fi
-
-# 79
-echo "[4/4] Removendo ícones do sistema..."
-for size in 16 32 64 128; do
-    ICON_PATH="/usr/share/icons/hicolor/${size}x${size}/apps/$APP_NAME_LOWER.png"
-    if [ -f "$ICON_PATH" ]; then
-        sudo rm "$ICON_PATH"
+for size in 16 32 64 128 256; do
+    if [ -f "${ICON_DIR_SYSTEM}/${size}x${size}/apps/${APP_NAME}.png" ]; then
+        sudo rm "${ICON_DIR_SYSTEM}/${size}x${size}/apps/${APP_NAME}.png"
     fi
 done
 
-# 79
-# --- Pós-Remoção ---
-echo "Atualizando caches de ícones e aplicações do sistema..."
-sudo gtk-update-icon-cache /usr/share/icons/hicolor -f || echo "Aviso: gtk-update-icon-cache falhou, mas a desinstalação principal foi concluída."
-sudo update-desktop-database || echo "Aviso: update-desktop-database falhou, mas a desinstalação principal foi concluída."
+if command -v update-desktop-database &> /dev/null; then
+    update-desktop-database "${DESKTOP_ENTRY_DIR_USER}" 2>/dev/null || true
+fi
+
+if command -v gtk-update-icon-cache &> /dev/null; then
+    gtk-update-icon-cache "${ICON_DIR_USER}" -f -t 2>/dev/null || true
+fi
+
+echo "=== Desinstalação Concluída ==="
+echo "O ${APP_DISPLAY_NAME} foi removido do sistema."
+echo "Nota: O diretório do projeto e o venv não foram removidos."
 
 
-# 80
-echo "--- Desinstalação Concluída ---"
-echo "O $APP_NAME foi exorcizado do seu sistema."
+# "Destruir e facil; construir e dificil." - Proverbio

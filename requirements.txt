@@ -1,12 +1,34 @@
-# 65
+# ==== AI/NLP ====
 transformers
 torch
-Pillow
 sentencepiece
 accelerate
 protobuf
-bitsandbytes
+sentence-transformers
+datasets
+scikit-learn
+
+# ==== API PROVIDERS ====
+groq
+google-generativeai
+
+# ==== GUI ====
+customtkinter
+Pillow
+
+# ==== UTILITIES ====
+python-dotenv
 python-docx
 lingua-language-detector
-python-dotenv
-customtkinter
+
+# ==== OPTIONAL (quantization) ====
+bitsandbytes
+
+# ==== TESTING ====
+pytest
+pytest-cov
+
+# ==== DEV TOOLS ====
+pre-commit
+ruff
+mypy

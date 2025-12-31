@@ -75,7 +75,7 @@ fi
 
 $SUDO_CMD mkdir -p "${INSTALL_DIR}"
 PYTHON_VENV_PATH="${SCRIPT_DIR}/venv/bin/python3"
-MAIN_SCRIPT_PATH="${SCRIPT_DIR}/run.py"
+MAIN_SCRIPT_PATH="${SCRIPT_DIR}/main.py"
 EXEC_COMMAND="\"${PYTHON_VENV_PATH}\" \"${MAIN_SCRIPT_PATH}\""
 CATEGORIES="Utility;TextTools;"
 
