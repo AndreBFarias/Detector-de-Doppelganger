@@ -1,34 +1,30 @@
-# 61
-import json
-import os
-import logging
+from __future__ import annotations
 
-def load_checkpoint(file_path):
-    """
-    Carrega checkpoint se existir.
-    """
+import json
+import logging
+import os
+from typing import Any
+
+
+def load_checkpoint(file_path: str) -> dict[str, Any]:
     if os.path.exists(file_path):
-        # 61
         try:
-            with open(file_path, 'r') as f:
+            with open(file_path) as f:
                 data = json.load(f)
             logging.info(f"Checkpoint carregado de {file_path}.")
             return data
-        # 61
         except Exception as e:
             logging.error(f"Erro ao carregar checkpoint: {e}")
     return {}
 
-def save_checkpoint(file_path, data):
-    # 62
-    """
-    Salva checkpoint.
-    """
-    # 63
+
+def save_checkpoint(file_path: str, data: dict[str, Any]) -> None:
     try:
         with open(file_path, 'w') as f:
             json.dump(data, f)
         logging.info(f"Checkpoint salvo em {file_path}.")
-    # 63
     except Exception as e:
         logging.error(f"Erro ao salvar checkpoint: {e}")
+
+
+# "A persistencia e o caminho do exito." - Charles Chaplin

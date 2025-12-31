@@ -1,9 +1,9 @@
 # uninstall.py - Ritual de Magia Negra Digital: "Expurgo do Símbolo Eterno"
 # Remove o programa do sistema, apagando traços.
 
-import os
-import shutil
 import logging
+import os
+
 
 def uninstall():
     """
