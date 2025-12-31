@@ -3,15 +3,13 @@ from __future__ import annotations
 import json
 import logging
 import os
-from typing import Any
 
 
 def save_output(text: str, filename: str, style: str = "default") -> None:
-    Document: Any = None
     try:
         from docx import Document
     except ImportError:
-        pass
+        Document = None  # type: ignore[misc,assignment]
 
     base, ext = os.path.splitext(filename)
 
@@ -21,7 +19,9 @@ def save_output(text: str, filename: str, style: str = "default") -> None:
 
     elif ext == ".docx":
         if Document is None:
-            raise ImportError("A biblioteca 'python-docx' é necessária para salvar em .docx. Instale com 'pip install python-docx'")
+            raise ImportError(
+                "A biblioteca 'python-docx' é necessária para salvar em .docx. Instale com 'pip install python-docx'"
+            )
         doc = Document()
         if style == "bullets":
             for line in text.split("\n"):

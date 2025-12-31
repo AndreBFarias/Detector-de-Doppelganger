@@ -53,9 +53,7 @@ class AppCore:
 
             logging.info(f"Carregando modelo avaliador: {config.HALLUCINATION_EVALUATION_MODEL}")
             self.naturalness_evaluator = pipeline(
-                "text-classification",
-                model=config.HALLUCINATION_EVALUATION_MODEL,
-                device=-1
+                "text-classification", model=config.HALLUCINATION_EVALUATION_MODEL, device=-1
             )
             logging.info("Modelo avaliador carregado com sucesso.")
 

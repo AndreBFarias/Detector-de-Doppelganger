@@ -43,10 +43,14 @@ Terminal=false
     script_path = os.path.join(src_dir, "main.py")
     dst_script = os.path.join(install_dir, f"{app_name.lower()}")
     shutil.copy2(script_path, dst_script)
-    os.chmod(dst_script, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR | stat.S_IRGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IXOTH)
+    os.chmod(
+        dst_script,
+        stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR | stat.S_IRGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IXOTH,
+    )
 
     logging.info(f"Instalação concluída em {install_dir}, {desktop_dir}, {icon_dir}.")
     print(f"Instalado. Execute com '{app_name.lower()}'.")
+
 
 if __name__ == "__main__":
     install()

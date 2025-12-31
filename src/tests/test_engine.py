@@ -57,6 +57,7 @@ class TestHumanizarAdversarial:
 class TestDetectorLocal:
     def test_import(self) -> None:
         from src.core.detector_local import DetectorLocal, detectar_ia_local, get_detector
+
         assert DetectorLocal is not None
         assert get_detector is not None
         assert detectar_ia_local is not None
@@ -65,6 +66,7 @@ class TestDetectorLocal:
 class TestDetectorAPI:
     def test_import(self) -> None:
         from src.core.detector_api import DetectorAPI, detectar_ia_api
+
         assert DetectorAPI is not None
         assert detectar_ia_api is not None
 
@@ -72,6 +74,7 @@ class TestDetectorAPI:
 class TestHumanizerLocal:
     def test_import(self) -> None:
         from src.core.humanizador_local import HumanizerLocal, get_humanizer, humanizar_local
+
         assert HumanizerLocal is not None
         assert get_humanizer is not None
         assert humanizar_local is not None
@@ -80,6 +83,7 @@ class TestHumanizerLocal:
 class TestHumanizerAPI:
     def test_import(self) -> None:
         from src.core.humanizador_api import HumanizerAPI, humanizar_api
+
         assert HumanizerAPI is not None
         assert humanizar_api is not None
 
@@ -87,6 +91,7 @@ class TestHumanizerAPI:
 class TestEngine:
     def test_import(self) -> None:
         from src.core.engine import DoppelgangerEngine, IterationResult, ProcessResult, create_engine
+
         assert DoppelgangerEngine is not None
         assert create_engine is not None
         assert IterationResult is not None
@@ -94,6 +99,7 @@ class TestEngine:
 
     def test_iteration_result_dataclass(self) -> None:
         from src.core.engine import IterationResult
+
         result = IterationResult(
             texto="Teste",
             score_ia=0.5,
@@ -106,6 +112,7 @@ class TestEngine:
 
     def test_process_result_dataclass(self) -> None:
         from src.core.engine import ProcessResult
+
         result = ProcessResult(
             texto_original="Original",
             texto_final="Final",

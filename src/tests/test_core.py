@@ -26,7 +26,7 @@ class TestCheckpoint:
         assert resultado == {}
 
     def test_save_and_load_checkpoint(self) -> None:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             temp_path = f.name
 
         try:
@@ -40,7 +40,7 @@ class TestCheckpoint:
 
 class TestOutputFormatter:
     def test_save_txt(self) -> None:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
             temp_path = f.name
 
         try:
@@ -52,7 +52,7 @@ class TestOutputFormatter:
             os.unlink(temp_path)
 
     def test_save_json(self) -> None:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             temp_path = f.name
 
         try:
@@ -65,7 +65,7 @@ class TestOutputFormatter:
             os.unlink(temp_path)
 
     def test_save_md(self) -> None:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
             temp_path = f.name
 
         try:
@@ -77,7 +77,7 @@ class TestOutputFormatter:
             os.unlink(temp_path)
 
     def test_save_md_bullets(self) -> None:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
             temp_path = f.name
 
         try:

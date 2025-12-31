@@ -43,11 +43,13 @@ class DatasetBuilder:
                     paragraphs = text.split("\n\n")
                     for para in paragraphs[:2]:
                         if 100 < len(para) < 2000:
-                            self.human_samples.append({
-                                "text": para.strip(),
-                                "label": 0,
-                                "source": "wikipedia-pt",
-                            })
+                            self.human_samples.append(
+                                {
+                                    "text": para.strip(),
+                                    "label": 0,
+                                    "source": "wikipedia-pt",
+                                }
+                            )
                             count += 1
 
             logger.info(f"Coletadas {count} amostras da Wikipedia.")
@@ -74,11 +76,13 @@ class DatasetBuilder:
             for item in dataset:
                 text = item.get("article", "")
                 if 200 < len(text) < 3000:
-                    self.human_samples.append({
-                        "text": text[:2000].strip(),
-                        "label": 0,
-                        "source": "news",
-                    })
+                    self.human_samples.append(
+                        {
+                            "text": text[:2000].strip(),
+                            "label": 0,
+                            "source": "news",
+                        }
+                    )
                     count += 1
 
             logger.info(f"Coletadas {count} amostras de noticias.")
@@ -97,6 +101,7 @@ class DatasetBuilder:
 
         try:
             from groq import Groq
+
             client = Groq(api_key=config.GROQ_API_KEY)
 
             prompts = [
@@ -129,11 +134,13 @@ class DatasetBuilder:
 
                         text = response.choices[0].message.content
                         if text and len(text) > 100:
-                            self.ai_samples.append({
-                                "text": text.strip(),
-                                "label": 1,
-                                "source": "groq-llama",
-                            })
+                            self.ai_samples.append(
+                                {
+                                    "text": text.strip(),
+                                    "label": 1,
+                                    "source": "groq-llama",
+                                }
+                            )
                             count += 1
 
                     except Exception as e:
@@ -156,6 +163,7 @@ class DatasetBuilder:
 
         try:
             import google.generativeai as genai
+
             genai.configure(api_key=config.GEMINI_API_KEY)
             model = genai.GenerativeModel(config.GEMINI_MODEL)
 
@@ -177,11 +185,13 @@ class DatasetBuilder:
                         text = response.text
 
                         if text and len(text) > 100:
-                            self.ai_samples.append({
-                                "text": text.strip(),
-                                "label": 1,
-                                "source": "gemini",
-                            })
+                            self.ai_samples.append(
+                                {
+                                    "text": text.strip(),
+                                    "label": 1,
+                                    "source": "gemini",
+                                }
+                            )
                             count += 1
 
                     except Exception as e:

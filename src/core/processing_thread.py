@@ -21,7 +21,7 @@ class ProcessingThread(threading.Thread):
         criatividade: float,
         intensidade: int,
         ui_queue: queue.Queue,
-        style_key: str = "default"
+        style_key: str = "default",
     ) -> None:
         super().__init__(daemon=True)
         self.core = app_core
@@ -53,7 +53,7 @@ class ProcessingThread(threading.Thread):
                 temperature=self.criatividade,
                 progress_callback=self.emit_progress_update,
                 stop_event=self.stop_event,
-                prompt_info=prompt_info
+                prompt_info=prompt_info,
             )
 
             if self.stop_event.is_set():
