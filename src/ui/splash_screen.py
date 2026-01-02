@@ -3,73 +3,115 @@ import threading
 import time
 
 import customtkinter
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFilter
 
 from src.core.models import ModelLoader
 
 
+def create_logo_with_shadow(image: Image.Image, size: tuple[int, int], shadow_radius: int = 8) -> Image.Image:
+    padding = shadow_radius * 2
+    canvas_size = (size[0] + padding, size[1] + padding)
+
+    img = image.copy()
+    if img.mode != "RGBA":
+        img = img.convert("RGBA")
+
+    img = img.resize(size, Image.Resampling.LANCZOS)
+
+    shadow = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
+    shadow_layer = Image.new("RGBA", size, (0, 0, 0, 0))
+
+    r, g, b, a = img.split()
+    shadow_layer.putalpha(a)
+
+    shadow_draw = ImageDraw.Draw(shadow_layer)
+    shadow_draw.bitmap((0, 0), a, fill=(0, 0, 0, 180))
+
+    offset = padding // 2
+    shadow.paste(shadow_layer, (offset, offset))
+
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=shadow_radius))
+
+    result = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
+    result = Image.alpha_composite(result, shadow)
+    result.paste(img, (offset, offset), img)
+
+    return result
+
+
 class SplashScreen(customtkinter.CTkToplevel):
-    """
-    Janela de splash screen que carrega os modelos em segundo plano.
-    """
+    BG_COLOR = "#1a1a2e"
+    CORNER_RADIUS = 20
 
     def __init__(self, master):
         super().__init__(master)
 
-        self.geometry("600x400")
+        self.width = 580
+        self.height = 380
+
         self.title("Carregando Modelos...")
         self.overrideredirect(True)
+        self.configure(fg_color=self.BG_COLOR)
 
-        # Centraliza a janela
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
-        x_cordinate = int((screen_width / 2) - (600 / 2))
-        y_cordinate = int((screen_height / 2) - (400 / 2))
-        self.geometry(f"600x400+{x_cordinate}+{y_cordinate}")
+        x_cordinate = int((screen_width / 2) - (self.width / 2))
+        y_cordinate = int((screen_height / 2) - (self.height / 2))
+        self.geometry(f"{self.width}x{self.height}+{x_cordinate}+{y_cordinate}")
 
-        # Configura o layout da grade
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
-        # Frame principal
-        self.frame = customtkinter.CTkFrame(self, corner_radius=15)
-        self.frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
-        self.frame.grid_rowconfigure(2, weight=1)
+        self.frame = customtkinter.CTkFrame(
+            self, corner_radius=self.CORNER_RADIUS, fg_color=self.BG_COLOR, border_width=0
+        )
+        self.frame.grid(row=0, column=0, sticky="nsew")
+        self.frame.grid_rowconfigure(0, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
+
+        self.content_frame = customtkinter.CTkFrame(self.frame, fg_color="transparent")
+        self.content_frame.grid(row=0, column=0, sticky="nsew", padx=30, pady=30)
 
         self.logo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "assets", "icon.png")
 
         try:
             self.logo_image = Image.open(self.logo_path)
-            self.logo_ctk = customtkinter.CTkImage(self.logo_image, size=(128, 128))
-            self.logo_label = customtkinter.CTkLabel(self.frame, image=self.logo_ctk, text="")
-            self.logo_label.pack(pady=40)
+            logo_with_shadow = create_logo_with_shadow(self.logo_image, (120, 120), shadow_radius=10)
+            self.logo_ctk = customtkinter.CTkImage(
+                light_image=logo_with_shadow, dark_image=logo_with_shadow, size=(150, 150)
+            )
+            self.logo_label = customtkinter.CTkLabel(
+                self.content_frame, image=self.logo_ctk, text="", fg_color="transparent"
+            )
+            self.logo_label.pack(pady=(5, 15))
         except FileNotFoundError:
-            print(f"Erro ao carregar a logo: Arquivo de ícone necessário não encontrado: {self.logo_path}")
-            # Cria um label de fallback se a imagem não for encontrada
-            self.logo_label = customtkinter.CTkLabel(self.frame, text="[Logo]", width=128, height=128)
-            self.logo_label.pack(pady=40)
+            print(f"Erro: icon.png nao encontrado em {self.logo_path}")
+            self.logo_label = customtkinter.CTkLabel(self.content_frame, text="[Logo]", width=128, height=128)
+            self.logo_label.pack(pady=(5, 15))
         except Exception as e:
-            print(f"Erro inesperado ao carregar a logo: {e}")
-            self.logo_label = customtkinter.CTkLabel(self.frame, text="[Logo Error]", width=128, height=128)
-            self.logo_label.pack(pady=40)
+            print(f"Erro ao carregar logo: {e}")
+            self.logo_label = customtkinter.CTkLabel(self.content_frame, text="[!]", width=128, height=128)
+            self.logo_label.pack(pady=(5, 15))
 
-        # Título
         self.title_label = customtkinter.CTkLabel(
-            self.frame, text="Detector de Doppelgänger", font=customtkinter.CTkFont(size=24, weight="bold")
+            self.content_frame,
+            text="Detector de Doppelgänger",
+            font=customtkinter.CTkFont(size=24, weight="bold"),
+            fg_color="transparent",
         )
         self.title_label.pack(pady=(0, 10))
 
-        # Status
         self.status_label = customtkinter.CTkLabel(
-            self.frame, text="Iniciando... Carregando modelos de IA.", font=customtkinter.CTkFont(size=14)
+            self.content_frame,
+            text="Iniciando... Carregando modelos de IA.",
+            font=customtkinter.CTkFont(size=14),
+            fg_color="transparent",
         )
         self.status_label.pack(pady=5)
 
-        # Barra de Progresso
-        self.progress_bar = customtkinter.CTkProgressBar(self.frame, width=400)
+        self.progress_bar = customtkinter.CTkProgressBar(self.content_frame, width=400)
         self.progress_bar.set(0)
-        self.progress_bar.pack(pady=20, padx=20)
+        self.progress_bar.pack(pady=(15, 10))
 
         self.callback = None
 
@@ -87,17 +129,14 @@ class SplashScreen(customtkinter.CTkToplevel):
             loader = ModelLoader(status_callback=self.update_status)
             loader.load_models()
 
-            # Simula um tempo extra para o usuário ler a mensagem final
             self.update_status("Modelos carregados. Iniciando aplicação...", 1.0)
             time.sleep(1.5)
 
             self.after(0, self.finish)
         except Exception as e:
-            # Em caso de erro, ainda tenta fechar o splash e abrir a main window
-            # A main window (ou o AppCore) terá que lidar com o modelo não carregado
-            print(f"Erro crítico ao carregar modelos: {e}")
+            print(f"Erro critico: {e}")
             self.update_status(f"Erro ao carregar: {e}", 0.9)
-            time.sleep(2)  # Dá tempo para ler o erro
+            time.sleep(2)
             self.after(0, self.finish)
 
     def start_download(self, callback):
@@ -106,5 +145,4 @@ class SplashScreen(customtkinter.CTkToplevel):
         self.focus_force()
         self.grab_set()
 
-        # Inicia o carregamento em uma thread separada
         threading.Thread(target=self.load_models_thread, daemon=True).start()

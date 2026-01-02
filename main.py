@@ -27,7 +27,6 @@ def main() -> int:
         root.withdraw()
 
         def start_main_app() -> None:
-            root.deiconify()
             root.title("Detector de Doppelganger")
             root.geometry(f"{config.WINDOW_WIDTH}x{config.WINDOW_HEIGHT}")
             root.minsize(config.WINDOW_MIN_WIDTH, config.WINDOW_MIN_HEIGHT)
@@ -35,7 +34,17 @@ def main() -> int:
             app = MainWindow(master=root)
             app.pack(expand=True, fill="both")
 
+            root.update_idletasks()
             root.attributes("-zoomed", True)
+            root.update_idletasks()
+
+            def show_window():
+                root.deiconify()
+                root.lift()
+                root.focus_force()
+                root.update_idletasks()
+
+            root.after(150, show_window)
             root.mainloop()
 
         splash = SplashScreen(root)

@@ -65,8 +65,16 @@ COLORS = {
     "green": "#50FA7B",
     "pink": "#FF79C6",
     "purple": "#BD93F9",
+    "cyan": "#8BE9FD",
+    "orange": "#FFB86C",
+    "yellow": "#F1FA8C",
+    "red": "#FF5555",
     "text": "#F8F8F2",
     "placeholder": "#6272A4",
+    "input_bg": "#1e1e2e",
+    "input_border": "#6272A4",
+    "output_bg": "#1a1a2e",
+    "output_border": "#50FA7B",
 }
 
 BG_COLOR = COLORS["bg"]
@@ -74,8 +82,15 @@ FRAME_COLOR = COLORS["frame"]
 ACCENT_GREEN = COLORS["green"]
 ACCENT_PINK = COLORS["pink"]
 ACCENT_PURPLE = COLORS["purple"]
+ACCENT_CYAN = COLORS["cyan"]
+ACCENT_ORANGE = COLORS["orange"]
 TEXT_COLOR = COLORS["text"]
 PLACEHOLDER_TEXT_COLOR = COLORS["placeholder"]
+
+INPUT_BG = COLORS["input_bg"]
+INPUT_BORDER = COLORS["input_border"]
+OUTPUT_BG = COLORS["output_bg"]
+OUTPUT_BORDER = COLORS["output_border"]
 
 THEME_PATH = SRC_DIR / "utils" / "ctk_theme.json"
 PROMPTS_PATH = APP_DIR / "prompts.json"
