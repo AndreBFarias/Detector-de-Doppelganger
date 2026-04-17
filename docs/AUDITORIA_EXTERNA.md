@@ -85,24 +85,24 @@ Detector-de-Doppelganger/
 ```
 [Input Texto]
     │
-    ▼
+    
 [Detector IA] ─────────────────┐
     │                          │
-    ▼                          │
+                              │
 [Humanizador T5]               │
     │                          │
-    ▼                          │
+                              │
 [Avaliador Naturalidade]       │
     │                          │
     ├── Melhoria < Threshold?──┘
     │         │
-    │         ▼
+    │         
     │   [Reprocessador]
     │         │
-    │         ▼
+    │         
     │   [Loop ate 3x]
     │
-    ▼
+    
 [Output Humanizado]
 ```
 
@@ -193,13 +193,13 @@ Token de acesso ao HuggingFace Hub. Armazenado em .env (ignorado no git).
 ### 4.3 .gitignore
 
 ```gitignore
-__pycache__/    ✓
-*.py[cod]       ✓
-.env            ✓
-venv/           ✓
-.idea/          ✓
-.vscode/        ✓
-models/         ✓
+__pycache__/    
+*.py[cod]       
+.env            
+venv/           
+.idea/          
+.vscode/        
+models/         
 ```
 
 **Status**: Adequado para seguranca.

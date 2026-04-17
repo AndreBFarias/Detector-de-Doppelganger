@@ -103,42 +103,42 @@ SPRINT_WORKFLOW     → SPRINT_[NOME]_REPORT.md
 ```
 [INICIO]
     │
-    ▼
+    
 ┌──────────────────┐
 │  SPRINT_WORKFLOW    │ ← Executa a tarefa
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │ INTEGRATION_WORKFLOW│ ← Verifica se nao quebrou nada
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │   AUDITOR_WORKFLOW  │ ← Audita o codigo novo
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │ COMPLIANCE_WORKFLOW │ ← Verifica regras
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │    QA_WORKFLOW      │ ← Valida qualidade
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │ SCORECARD_WORKFLOW  │ ← Gera pontuacao
 └────────┬─────────┘
          │
-         ▼
+         
 ┌──────────────────┐
 │ COMMERCIAL_WORKFLOW │ ← Gera relatorio final
 └────────┬─────────┘
          │
-         ▼
+         
 [FIM - ENTREGA COMPLETA]
 ```
 

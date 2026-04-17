@@ -15,7 +15,7 @@ Substituicao do motor de deteccao/humanizacao por uma arquitetura que oferece:
 │                      ENTRADA DE TEXTO                        │
 └─────────────────────────────────────────────────────────────┘
                               │
-                              ▼
+                              
 ┌─────────────────────────────────────────────────────────────┐
 │                    DETECTOR (Modular)                        │
 │  ├── OpenSource: roberta-large-openai-detector               │
@@ -23,7 +23,7 @@ Substituicao do motor de deteccao/humanizacao por uma arquitetura que oferece:
 │  └── API: Groq (meta-llama/llama-guard) [opcional]           │
 └─────────────────────────────────────────────────────────────┘
                               │
-                              ▼
+                              
 ┌─────────────────────────────────────────────────────────────┐
 │                   HUMANIZADOR (Modular)                      │
 │  ├── OpenSource: Tecnicas adversariais locais                │
@@ -34,7 +34,7 @@ Substituicao do motor de deteccao/humanizacao por uma arquitetura que oferece:
 │           Prompt especializado anti-detector                 │
 └─────────────────────────────────────────────────────────────┘
                               │
-                              ▼
+                              
 ┌─────────────────────────────────────────────────────────────┐
 │                   LOOP DE ITERACAO                           │
 │  while score_ia >= threshold AND iteracoes < max:            │
@@ -42,7 +42,7 @@ Substituicao do motor de deteccao/humanizacao por uma arquitetura que oferece:
 │      score_ia = detectar(texto)                              │
 └─────────────────────────────────────────────────────────────┘
                               │
-                              ▼
+                              
 ┌─────────────────────────────────────────────────────────────┐
 │                      SAIDA HUMANIZADA                        │
 └─────────────────────────────────────────────────────────────┘

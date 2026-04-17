@@ -42,12 +42,12 @@ class LeftMenu(customtkinter.CTkFrame):
                 self.logo_label = customtkinter.CTkLabel(self.logo_frame, image=self.logo_image, text="")
                 self.logo_label.grid(row=0, column=0)
             else:
-                self.logo_label = customtkinter.CTkLabel(self.logo_frame, text="🧠", font=("Inter", 60))
+                self.logo_label = customtkinter.CTkLabel(self.logo_frame, text="", font=("Inter", 60))
                 self.logo_label.grid(row=0, column=0)
 
         except Exception as e:
             print(f"Erro ao carregar a logo no menu: {e}")
-            self.logo_label = customtkinter.CTkLabel(self.logo_frame, text="🧠", font=("Inter", 60))
+            self.logo_label = customtkinter.CTkLabel(self.logo_frame, text="", font=("Inter", 60))
             self.logo_label.grid(row=0, column=0)
 
         # --- BLOCO 2: MODELOS E CONTROLES ---

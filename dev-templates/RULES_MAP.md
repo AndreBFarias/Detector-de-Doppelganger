@@ -18,7 +18,7 @@ VERSAO: 1.0
 │  • Nao deletar dados de producao sem backup             │
 └─────────────────────────────────────────────────────────┘
                            │
-                           ▼
+                           
 ┌─────────────────────────────────────────────────────────┐
 │  NIVEL 1: ESTRUTURAIS (Sobrescrevem niveis inferiores)  │
 │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │
@@ -27,7 +27,7 @@ VERSAO: 1.0
 │  • Formato de commits                                   │
 └─────────────────────────────────────────────────────────┘
                            │
-                           ▼
+                           
 ┌─────────────────────────────────────────────────────────┐
 │  NIVEL 2: TECNICAS (Sobrescrevem apenas nivel 3)        │
 │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │
@@ -37,7 +37,7 @@ VERSAO: 1.0
 │  • File locks                                           │
 └─────────────────────────────────────────────────────────┘
                            │
-                           ▼
+                           
 ┌─────────────────────────────────────────────────────────┐
 │  NIVEL 3: PROCESSUAIS (Mais flexiveis)                  │
 │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │
@@ -152,7 +152,7 @@ Obrigatorio: Benchmark antes/depois
 ```
 INICIO: Preciso violar uma regra?
          │
-         ▼
+         
     ┌────────────┐
     │ E nivel 0? │
     └─────┬──────┘
@@ -161,7 +161,7 @@ INICIO: Preciso violar uma regra?
     │           │
    SIM         NAO
     │           │
-    ▼           ▼
+               
   PARE      ┌────────────┐
   IMEDIATAMENTE │ E nivel 1? │
             └─────┬──────┘
@@ -170,7 +170,7 @@ INICIO: Preciso violar uma regra?
             │           │
            SIM         NAO
             │           │
-            ▼           ▼
+                       
     Buscar alternativa  ┌────────────┐
     que nao viole       │ E nivel 2? │
                         └─────┬──────┘
@@ -179,7 +179,7 @@ INICIO: Preciso violar uma regra?
                         │           │
                        SIM         NAO
                         │           │
-                        ▼           ▼
+                                   
                 Documentar motivo   Pode flexibilizar
                 + issue de debito   com documentacao
 ```
